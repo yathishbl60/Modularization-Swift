@@ -44,14 +44,13 @@ final class ListPresenterTests: XCTestCase {
         
         // then
         XCTAssertEqual(view.title, "Photos")
-        XCTAssertTrue(view.isLoading ?? false)
+        XCTAssertTrue(view.isLoading!)
         XCTAssertTrue(interactor.loadPhotosCalled)
     }
 
     func testDidSelectItem() {
         // given
-        let photos = mockPhotos()
-        presenter.didLoad(photos: photos)
+        presenter.didLoad(photos: mockPhotos)
         let indexPath = IndexPath(row: 0, section: 0)
         
         // when
@@ -59,7 +58,7 @@ final class ListPresenterTests: XCTestCase {
         
         // then
         let photo = router.photo
-        XCTAssertEqual(photo, photos.first)
+        XCTAssertEqual(photo, mockPhotos.first)
     }
 
     func testDidPullToRefresh() {
@@ -67,50 +66,22 @@ final class ListPresenterTests: XCTestCase {
         presenter.didPullRefresh()
         
         // then
-        XCTAssertTrue(view.isLoading ?? false)
+        XCTAssertTrue(view.isLoading!)
         XCTAssertTrue(interactor.loadPhotosCalled)
     }
 
-    func testDidScrollToBottomWhenAlreadyLoading() {
-        // given
-        view.isLoading = true
-        
+    func testDidScrollToBottom() {
         // when
         presenter.didScrollToBottom()
         
         // then
-        XCTAssertTrue(view.isLoading ?? false)
-        XCTAssertTrue(interactor.loadMorePhotosCalled)
-    }
-
-    func testDidScrollToBottomWhenNotLoading() {
-        // given
-        view.isLoading = false
-        
-        // when
-        presenter.didScrollToBottom()
-        
-        // then
-        XCTAssertTrue(view.isLoading ?? false)
-        XCTAssertTrue(interactor.loadMorePhotosCalled)
-    }
-
-    func testDidScrollToBottomWhenAllItemsLoaded() {
-        // given
-        view.isLoading = false
-        presenter.didLoad(photos: [])
-        
-        // when
-        presenter.didScrollToBottom()
-        
-        // then
-        XCTAssertTrue((view.isLoading ?? false) == false)
+        XCTAssertTrue(view.isLoading!)
         XCTAssertTrue(interactor.loadMorePhotosCalled)
     }
 
     func testDidLoadPhotos() {
         // given
-        let photos = mockPhotos()
+        let photos = mockPhotos
         
         // when
         presenter.didLoad(photos: photos)
@@ -130,7 +101,7 @@ final class ListPresenterTests: XCTestCase {
 
     func testDidLoadMorePhotos() {
         // given
-        let photos = mockPhotos()
+        let photos = mockPhotos
         presenter.didLoad(photos: photos)
 
         let photos2 = [
@@ -150,7 +121,7 @@ final class ListPresenterTests: XCTestCase {
 
         // when
         presenter.didLoadMore(photos: photos2)
-        
+
         // then
         XCTAssertTrue(view.endPullRefreshingCalled)
         XCTAssertTrue(view.displayCellsCalled)
@@ -183,7 +154,7 @@ final class ListPresenterTests: XCTestCase {
 
 private extension ListPresenterTests {
     
-    func mockPhotos() -> [Photo] {
+    var mockPhotos: [Photo] {
         let mockPhoto1 = Photo(id: 1,
                                albumId: 12,
                                title: "a",
