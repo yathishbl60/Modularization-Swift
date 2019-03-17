@@ -7,6 +7,7 @@
 //
 
 @testable import ListModule
+import NetworkClient
 import XCTest
 
 final class ListInteractorTests: XCTestCase {
