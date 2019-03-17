@@ -8,7 +8,7 @@
 
 import UIKit
 
-typealias ListViewModule = UIViewController
+public typealias ListViewModule = UIViewController
 
 protocol ListViewInput: class {
     func display(cells: [CellModel])

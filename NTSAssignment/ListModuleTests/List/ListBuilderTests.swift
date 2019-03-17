@@ -6,7 +6,7 @@
 //  Copyright © 2019 Prajwal S. All rights reserved.
 //
 
-@testable import NTSAssignment
+@testable import ListModule
 import XCTest
 
 class ListBuilderTests: XCTestCase {

@@ -8,10 +8,9 @@
 
 import UIKit
 
-
 extension UIStoryboard {
 
-    convenience init(storyboard: Storyboard, bundle: Bundle? = nil) {
+    convenience init(storyboard: Storyboard, bundle: Bundle? = Bundle(for: DummyBundleClass.self)) {
         self.init(name: storyboard.rawValue, bundle: bundle)
     }
 
@@ -38,3 +37,5 @@ extension StoryboardIdentifiable where Self: UIViewController {
 enum Storyboard: String {
     case Main
 }
+
+class DummyBundleClass { }
