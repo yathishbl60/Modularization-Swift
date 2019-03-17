@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ListCellModel: CellModel {
+struct ListCellModel: CellModel, Equatable {
     static let cellId: String = String(describing: ListCell.self)
 
     let title: String

@@ -118,23 +118,52 @@ final class ListPresenterTests: XCTestCase {
         // then
         XCTAssertTrue(view.endPullRefreshingCalled)
         XCTAssertTrue(view.displayCellsCalled)
-        XCTAssertTrue(view.cells.count == 2)
-        XCTAssertTrue(view.isLoading ?? false)
+        XCTAssertEqual(
+            view.cells as! [ListCellModel],
+            [
+                ListCellModel(title: "a", thumb: URL(string: "https://gggt.com/1")!),
+                ListCellModel(title: "b", thumb: URL(string: "https://gggt.com/2")!)
+            ]
+        )
+        XCTAssertTrue(view.isLoading!)
     }
 
     func testDidLoadMorePhotos() {
         // given
         let photos = mockPhotos()
         presenter.didLoad(photos: photos)
-        
+
+        let photos2 = [
+            Photo(id: 3,
+                  albumId: 13,
+                  title: "c",
+                  url: URL(string:  "https://g.com/3")!,
+                  thumbnailUrl: URL(string:"https://gggt.com/3")!
+            ),
+            Photo(id: 4,
+                  albumId: 44,
+                  title: "d",
+                  url: URL(string:"https://g.com/4")!,
+                  thumbnailUrl: URL(string:"https://gggt.com/4")!
+            )
+        ]
+
         // when
-        presenter.didLoadMore(photos: photos)
+        presenter.didLoadMore(photos: photos2)
         
         // then
         XCTAssertTrue(view.endPullRefreshingCalled)
         XCTAssertTrue(view.displayCellsCalled)
-        XCTAssertTrue(view.cells.count == 2)
-        XCTAssertTrue(view.isLoading ?? false)
+        XCTAssertEqual(
+            view.cells as! [ListCellModel],
+            [
+                ListCellModel(title: "a", thumb: URL(string: "https://gggt.com/1")!),
+                ListCellModel(title: "b", thumb: URL(string: "https://gggt.com/2")!),
+                ListCellModel(title: "c", thumb: URL(string: "https://gggt.com/3")!),
+                ListCellModel(title: "d", thumb: URL(string: "https://gggt.com/4")!)
+            ]
+        )
+        XCTAssertTrue(view.isLoading!)
     }
 
     func testDidFailToLoadPhotos() {
@@ -185,7 +214,7 @@ private extension ListPresenterTests {
 
         var displayMoreCellsCalled = false
         func displayMore(cells: [CellModel]) {
-            self.cells = cells
+            self.cells.append(contentsOf: cells)
             displayMoreCellsCalled = true
         }
 
