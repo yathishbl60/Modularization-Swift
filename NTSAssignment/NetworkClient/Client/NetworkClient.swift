@@ -17,6 +17,10 @@ protocol NetworkClient {
 
 struct NetworkClientBuilder {
 
+    init() {
+        
+    }
+    
     func build() -> NetworkClient {
         let serializer = JsonSerializer()
         let responseInterceptors = [StatusCodeCheckInterceptor()]

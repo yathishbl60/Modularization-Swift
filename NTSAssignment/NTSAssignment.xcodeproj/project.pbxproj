@@ -47,6 +47,12 @@
 		9ABA5FCC223DBECE00E135E1 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5FCB223DBECE00E135E1 /* DetailPresenter.swift */; };
 		9ABA5FD2223DBF2B00E135E1 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5FD1223DBF2B00E135E1 /* DetailViewModel.swift */; };
 		9ABA5FD5223DC5E100E135E1 /* ListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5FD4223DC5E100E135E1 /* ListInteractorTests.swift */; };
+		9ABA5FD7223E365A00E135E1 /* ListBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5FD6223E365A00E135E1 /* ListBuilderTests.swift */; };
+		9ABA6009223E3DDC00E135E1 /* NetworkClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ABA6000223E3DDB00E135E1 /* NetworkClient.framework */; };
+		9ABA6010223E3DDC00E135E1 /* NetworkClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA600F223E3DDC00E135E1 /* NetworkClientTests.swift */; };
+		9ABA6012223E3DDC00E135E1 /* NetworkClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABA6002223E3DDB00E135E1 /* NetworkClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9ABA6015223E3DDC00E135E1 /* NetworkClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ABA6000223E3DDB00E135E1 /* NetworkClient.framework */; };
+		9ABA6016223E3DDC00E135E1 /* NetworkClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9ABA6000223E3DDB00E135E1 /* NetworkClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +63,42 @@
 			remoteGlobalIDString = 9ABA5F5E223BEFB500E135E1;
 			remoteInfo = NTSAssignment;
 		};
+		9ABA600A223E3DDC00E135E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9ABA5F57223BEFB500E135E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9ABA5FFF223E3DDB00E135E1;
+			remoteInfo = NetworkClient;
+		};
+		9ABA600C223E3DDC00E135E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9ABA5F57223BEFB500E135E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9ABA5F5E223BEFB500E135E1;
+			remoteInfo = NTSAssignment;
+		};
+		9ABA6013223E3DDC00E135E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9ABA5F57223BEFB500E135E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9ABA5FFF223E3DDB00E135E1;
+			remoteInfo = NetworkClient;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9ABA5FF7223E3C5F00E135E1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9ABA6016223E3DDC00E135E1 /* NetworkClient.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2FC3ED27AF833446C2FC1C53 /* Pods-NTSAssignmentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTSAssignmentTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NTSAssignmentTests/Pods-NTSAssignmentTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +148,13 @@
 		9ABA5FCB223DBECE00E135E1 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		9ABA5FD1223DBF2B00E135E1 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		9ABA5FD4223DC5E100E135E1 /* ListInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListInteractorTests.swift; sourceTree = "<group>"; };
+		9ABA5FD6223E365A00E135E1 /* ListBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBuilderTests.swift; sourceTree = "<group>"; };
+		9ABA6000223E3DDB00E135E1 /* NetworkClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9ABA6002223E3DDB00E135E1 /* NetworkClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkClient.h; sourceTree = "<group>"; };
+		9ABA6008223E3DDB00E135E1 /* NetworkClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9ABA600F223E3DDC00E135E1 /* NetworkClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientTests.swift; sourceTree = "<group>"; };
+		9ABA6011223E3DDC00E135E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9ABA601D223E3E3D00E135E1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F339A8058EBF0D2B4F6F77E2 /* Pods-NTSAssignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTSAssignment.release.xcconfig"; path = "Pods/Target Support Files/Pods-NTSAssignment/Pods-NTSAssignment.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607D7F446A08BF06E3770207 /* Pods_NTSAssignment.framework in Frameworks */,
+				9ABA6015223E3DDC00E135E1 /* NetworkClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +173,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				165F06FBFA0DE8E99B84D33A /* Pods_NTSAssignmentTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9ABA5FFD223E3DDB00E135E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9ABA6005223E3DDB00E135E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9ABA6009223E3DDC00E135E1 /* NetworkClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +229,8 @@
 				9ABA5FC9223DBC1B00E135E1 /* Assignment.md */,
 				9ABA5F61223BEFB500E135E1 /* NTSAssignment */,
 				9ABA5F76223BEFB700E135E1 /* NTSAssignmentTests */,
+				9ABA6001223E3DDB00E135E1 /* NetworkClient */,
+				9ABA600E223E3DDC00E135E1 /* NetworkClientTests */,
 				9ABA5F60223BEFB500E135E1 /* Products */,
 				9A9396F8161F1A0D38C165AB /* Pods */,
 				7269E9C5B212264A5D488FAA /* Frameworks */,
@@ -176,6 +242,8 @@
 			children = (
 				9ABA5F5F223BEFB500E135E1 /* NTSAssignment.app */,
 				9ABA5F73223BEFB700E135E1 /* NTSAssignmentTests.xctest */,
+				9ABA6000223E3DDB00E135E1 /* NetworkClient.framework */,
+				9ABA6008223E3DDB00E135E1 /* NetworkClientTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,7 +258,6 @@
 				9ABA5F6E223BEFB700E135E1 /* Info.plist */,
 				9ABA5F99223D799700E135E1 /* Screen */,
 				9ABA5FAF223D79FA00E135E1 /* Service */,
-				9ABA5F82223D787800E135E1 /* Network */,
 			);
 			path = NTSAssignment;
 			sourceTree = "<group>";
@@ -202,16 +269,6 @@
 				9ABA5F79223BEFB700E135E1 /* Info.plist */,
 			);
 			path = NTSAssignmentTests;
-			sourceTree = "<group>";
-		};
-		9ABA5F82223D787800E135E1 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				9ABA5F83223D787800E135E1 /* Client */,
-				9ABA5F88223D787800E135E1 /* Rest */,
-				9ABA5F94223D792300E135E1 /* Utils */,
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		9ABA5F83223D787800E135E1 /* Client */ = {
@@ -348,11 +405,44 @@
 			isa = PBXGroup;
 			children = (
 				9ABA5FD4223DC5E100E135E1 /* ListInteractorTests.swift */,
+				9ABA5FD6223E365A00E135E1 /* ListBuilderTests.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
 		};
+		9ABA6001223E3DDB00E135E1 /* NetworkClient */ = {
+			isa = PBXGroup;
+			children = (
+				9ABA5F83223D787800E135E1 /* Client */,
+				9ABA5F88223D787800E135E1 /* Rest */,
+				9ABA5F94223D792300E135E1 /* Utils */,
+				9ABA6002223E3DDB00E135E1 /* NetworkClient.h */,
+				9ABA601D223E3E3D00E135E1 /* Info.plist */,
+			);
+			path = NetworkClient;
+			sourceTree = "<group>";
+		};
+		9ABA600E223E3DDC00E135E1 /* NetworkClientTests */ = {
+			isa = PBXGroup;
+			children = (
+				9ABA600F223E3DDC00E135E1 /* NetworkClientTests.swift */,
+				9ABA6011223E3DDC00E135E1 /* Info.plist */,
+			);
+			path = NetworkClientTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		9ABA5FFB223E3DDB00E135E1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9ABA6012223E3DDC00E135E1 /* NetworkClient.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		9ABA5F5E223BEFB500E135E1 /* NTSAssignment */ = {
@@ -364,10 +454,12 @@
 				9ABA5F5C223BEFB500E135E1 /* Frameworks */,
 				9ABA5F5D223BEFB500E135E1 /* Resources */,
 				5DB3A7568859181691F5740F /* [CP] Embed Pods Frameworks */,
+				9ABA5FF7223E3C5F00E135E1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9ABA6014223E3DDC00E135E1 /* PBXTargetDependency */,
 			);
 			name = NTSAssignment;
 			productName = NTSAssignment;
@@ -393,6 +485,43 @@
 			productReference = 9ABA5F73223BEFB700E135E1 /* NTSAssignmentTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		9ABA5FFF223E3DDB00E135E1 /* NetworkClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9ABA6017223E3DDC00E135E1 /* Build configuration list for PBXNativeTarget "NetworkClient" */;
+			buildPhases = (
+				9ABA5FFB223E3DDB00E135E1 /* Headers */,
+				9ABA5FFC223E3DDB00E135E1 /* Sources */,
+				9ABA5FFD223E3DDB00E135E1 /* Frameworks */,
+				9ABA5FFE223E3DDB00E135E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NetworkClient;
+			productName = NetworkClient;
+			productReference = 9ABA6000223E3DDB00E135E1 /* NetworkClient.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9ABA6007223E3DDB00E135E1 /* NetworkClientTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9ABA601A223E3DDC00E135E1 /* Build configuration list for PBXNativeTarget "NetworkClientTests" */;
+			buildPhases = (
+				9ABA6004223E3DDB00E135E1 /* Sources */,
+				9ABA6005223E3DDB00E135E1 /* Frameworks */,
+				9ABA6006223E3DDB00E135E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9ABA600B223E3DDC00E135E1 /* PBXTargetDependency */,
+				9ABA600D223E3DDC00E135E1 /* PBXTargetDependency */,
+			);
+			name = NetworkClientTests;
+			productName = NetworkClientTests;
+			productReference = 9ABA6008223E3DDB00E135E1 /* NetworkClientTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -407,6 +536,13 @@
 						CreatedOnToolsVersion = 10.1;
 					};
 					9ABA5F72223BEFB700E135E1 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 9ABA5F5E223BEFB500E135E1;
+					};
+					9ABA5FFF223E3DDB00E135E1 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					9ABA6007223E3DDB00E135E1 = {
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = 9ABA5F5E223BEFB500E135E1;
 					};
@@ -427,6 +563,8 @@
 			targets = (
 				9ABA5F5E223BEFB500E135E1 /* NTSAssignment */,
 				9ABA5F72223BEFB700E135E1 /* NTSAssignmentTests */,
+				9ABA5FFF223E3DDB00E135E1 /* NetworkClient */,
+				9ABA6007223E3DDB00E135E1 /* NetworkClientTests */,
 			);
 		};
 /* End PBXProject section */
@@ -444,6 +582,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		9ABA5F71223BEFB700E135E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9ABA5FFE223E3DDB00E135E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9ABA6006223E3DDB00E135E1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -567,6 +719,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				9ABA5FD5223DC5E100E135E1 /* ListInteractorTests.swift in Sources */,
+				9ABA5FD7223E365A00E135E1 /* ListBuilderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9ABA5FFC223E3DDB00E135E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9ABA6004223E3DDB00E135E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9ABA6010223E3DDC00E135E1 /* NetworkClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,6 +745,21 @@
 			isa = PBXTargetDependency;
 			target = 9ABA5F5E223BEFB500E135E1 /* NTSAssignment */;
 			targetProxy = 9ABA5F74223BEFB700E135E1 /* PBXContainerItemProxy */;
+		};
+		9ABA600B223E3DDC00E135E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9ABA5FFF223E3DDB00E135E1 /* NetworkClient */;
+			targetProxy = 9ABA600A223E3DDC00E135E1 /* PBXContainerItemProxy */;
+		};
+		9ABA600D223E3DDC00E135E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9ABA5F5E223BEFB500E135E1 /* NTSAssignment */;
+			targetProxy = 9ABA600C223E3DDC00E135E1 /* PBXContainerItemProxy */;
+		};
+		9ABA6014223E3DDC00E135E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9ABA5FFF223E3DDB00E135E1 /* NetworkClient */;
+			targetProxy = 9ABA6013223E3DDC00E135E1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -808,6 +991,98 @@
 			};
 			name = Release;
 		};
+		9ABA6018223E3DDC00E135E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = NetworkClient/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = newscorp.NetworkClient;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9ABA6019223E3DDC00E135E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = NetworkClient/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = newscorp.NetworkClient;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9ABA601B223E3DDC00E135E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NetworkClientTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = newscorp.NetworkClientTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NTSAssignment.app/NTSAssignment";
+			};
+			name = Debug;
+		};
+		9ABA601C223E3DDC00E135E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NetworkClientTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = newscorp.NetworkClientTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NTSAssignment.app/NTSAssignment";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -834,6 +1109,24 @@
 			buildConfigurations = (
 				9ABA5F80223BEFB700E135E1 /* Debug */,
 				9ABA5F81223BEFB700E135E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9ABA6017223E3DDC00E135E1 /* Build configuration list for PBXNativeTarget "NetworkClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9ABA6018223E3DDC00E135E1 /* Debug */,
+				9ABA6019223E3DDC00E135E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9ABA601A223E3DDC00E135E1 /* Build configuration list for PBXNativeTarget "NetworkClientTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9ABA601B223E3DDC00E135E1 /* Debug */,
+				9ABA601C223E3DDC00E135E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

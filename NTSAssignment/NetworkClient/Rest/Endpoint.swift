@@ -8,16 +8,16 @@
 
 import Foundation
 
-protocol Endpoint {
+public protocol Endpoint {
     var url: URL { get }
     var method: Method { get }
 }
 
-protocol EndpointProvider {
+public protocol EndpointProvider {
     var endpoint: Endpoint { get }
 }
 
-enum Method: String {
+public enum Method: String {
     case get = "GET"
     case post = "POST"
 }

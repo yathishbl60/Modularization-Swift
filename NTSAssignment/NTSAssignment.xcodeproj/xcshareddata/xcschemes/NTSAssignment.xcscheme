@@ -49,6 +49,26 @@
                ReferencedContainer = "container:NTSAssignment.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9ABA5FE4223E3C5E00E135E1"
+               BuildableName = "NetworkTests.xctest"
+               BlueprintName = "NetworkTests"
+               ReferencedContainer = "container:NTSAssignment.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9ABA6007223E3DDB00E135E1"
+               BuildableName = "NetworkClientTests.xctest"
+               BlueprintName = "NetworkClientTests"
+               ReferencedContainer = "container:NTSAssignment.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
