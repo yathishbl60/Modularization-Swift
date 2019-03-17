@@ -25,3 +25,10 @@ The following, in order of importance, will be analyzed when we review your code
 How I create app icon:
 -----------------
 Used online tool https://appicon.co/  to make icon for image https://commons.wikimedia.org/wiki/File:Hk_P-plate.svg  
+
+-----------------
+Modules
+-----------------
+NTSAssignment - Main app
+ListModule - module contains displaying List and details
+NetworkClient - module handles networking
