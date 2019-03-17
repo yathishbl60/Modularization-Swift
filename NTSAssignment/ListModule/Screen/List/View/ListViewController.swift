@@ -12,8 +12,7 @@ final class ListViewController: UIViewController, StoryboardIdentifiable {
     
     var output: ListViewOutput?
     private var cellModels: [CellModel] = []
-    private var loading: Bool = false
-    
+
     @IBOutlet private weak var tableView: UITableView!
     
     private lazy var refreshControl: UIRefreshControl = {
@@ -23,6 +22,15 @@ final class ListViewController: UIViewController, StoryboardIdentifiable {
 
         return refreshControl
     }()
+
+    private var loadMoreIndicator: UIView {
+        let spinner = UIActivityIndicatorView(style: .gray)
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.startAnimating()
+        spinner.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 44)
+
+        return spinner
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,15 +80,9 @@ extension ListViewController: ListViewInput {
     func display(title: String) {
         self.title = title
     }
-    
-    var isLoading: Bool {
-        get {
-            return loading
-        }
-        set {
-            loading = isLoading
-            tableView.tableFooterView?.isHidden = !loading
-        }
+
+    func display(isLoading: Bool) {
+        tableView.tableFooterView = isLoading ? loadMoreIndicator : UIView()
     }
 
     func endPullRefreshing() {
@@ -114,24 +116,6 @@ extension ListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         output?.didSelect(indexPath: indexPath)
-    }
-
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let lastSectionIndex = tableView.numberOfSections - 1
-        guard lastSectionIndex >= 0 else { return }
-
-        let lastRowIndex = tableView.numberOfRows(inSection: lastSectionIndex) - 1
-        guard lastRowIndex >= 0 else { return }
-
-        if indexPath.section == lastSectionIndex && indexPath.row == lastRowIndex {
-            // display load more indicator
-            let spinner = UIActivityIndicatorView(style: .gray)
-            spinner.startAnimating()
-            spinner.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 44)
-            
-            tableView.tableFooterView = spinner
-            tableView.tableFooterView?.isHidden = false
-        }
     }
 
 }
