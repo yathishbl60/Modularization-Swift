@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import NetworkClient
 
 protocol PhotosListService {
     func fetchPhotos(request: PhotosListRequestParams, completion: @escaping (Result<[Photo]>) -> Void)
@@ -44,5 +45,5 @@ final class PhotosServiceIml: PhotosListService {
 
 struct PhotosEndpoint: Endpoint {
     let url: URL
-    let method: Method = .get
+    let method: RestMethod = .get
 }

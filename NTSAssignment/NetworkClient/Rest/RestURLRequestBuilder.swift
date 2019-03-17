@@ -23,12 +23,17 @@ struct RestURLRequestBuilder {
 }
 
 
-struct URLBuilder {
+public struct URLBuilder {
 
-    let path: URL
-    let urlParams: [String: String]
+    public let path: URL
+    public let urlParams: [String: String]
 
-    func build() -> URL {
+    public init(path: URL, urlParams: [String: String]) {
+        self.path = path
+        self.urlParams = urlParams
+    }
+
+    public func build() -> URL {
         var queries: [URLQueryItem] = []
 
         for (key, value) in urlParams {

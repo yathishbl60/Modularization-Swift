@@ -8,20 +8,18 @@
 
 import Foundation
 
-protocol NetworkClient {
+public protocol NetworkClient {
     func request<Params, DTO, Model>(endpoint: Endpoint,
                                      params: Params,
                                      mapOutput: @escaping (DTO) throws -> Model,
                                      completion: @escaping (Result<Model>) -> Void) where Params: Encodable, DTO: Decodable
 }
 
-struct NetworkClientBuilder {
+public struct NetworkClientBuilder {
 
-    init() {
-        
-    }
+    public init() { }
     
-    func build() -> NetworkClient {
+    public func build() -> NetworkClient {
         let serializer = JsonSerializer()
         let responseInterceptors = [StatusCodeCheckInterceptor()]
         let api = RestApiImpl(session: URLSession.shared)

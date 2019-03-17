@@ -8,25 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		165F06FBFA0DE8E99B84D33A /* Pods_NTSAssignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C2EDDE84B5C13DA09FFB54 /* Pods_NTSAssignmentTests.framework */; };
+		5741D513223E40FA00926059 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F84223D787800E135E1 /* NetworkClient.swift */; };
+		5741D515223E411300926059 /* ResponseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F86223D787800E135E1 /* ResponseInterceptor.swift */; };
+		5741D516223E411300926059 /* RestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F8A223D787800E135E1 /* RestApi.swift */; };
+		5741D517223E411300926059 /* RestRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578C70CC223E229600DA4C18 /* RestRequest.swift */; };
+		5741D518223E411300926059 /* RestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578C70CE223E229E00DA4C18 /* RestResponse.swift */; };
+		5741D519223E411300926059 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F8C223D787800E135E1 /* Endpoint.swift */; };
+		5741D51A223E411300926059 /* RestURLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F89223D787800E135E1 /* RestURLRequestBuilder.swift */; };
+		5741D51B223E411300926059 /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578C70C8223E0FB500DA4C18 /* Dispatcher.swift */; };
+		5741D51C223E411300926059 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F96223D792300E135E1 /* JSON.swift */; };
+		5741D51D223E411300926059 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F95223D792300E135E1 /* Result.swift */; };
+		5741D51E223E411300926059 /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F87223D787800E135E1 /* Serializer.swift */; };
+		5741D51F223E411300926059 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578C70D0223E22B300DA4C18 /* Errors.swift */; };
 		578C70C7223DF5E200DA4C18 /* UIStoryboard+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578C70C6223DF5E200DA4C18 /* UIStoryboard+.swift */; };
-		578C70C9223E0FB500DA4C18 /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578C70C8223E0FB500DA4C18 /* Dispatcher.swift */; };
 		578C70CB223E146F00DA4C18 /* EmptyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578C70CA223E146F00DA4C18 /* EmptyRequest.swift */; };
-		578C70CD223E229700DA4C18 /* RestRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578C70CC223E229600DA4C18 /* RestRequest.swift */; };
-		578C70CF223E229E00DA4C18 /* RestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578C70CE223E229E00DA4C18 /* RestResponse.swift */; };
-		578C70D1223E22B300DA4C18 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578C70D0223E22B300DA4C18 /* Errors.swift */; };
 		607D7F446A08BF06E3770207 /* Pods_NTSAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389F3713D40F60179C0AB119 /* Pods_NTSAssignment.framework */; };
 		9ABA5F63223BEFB500E135E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F62223BEFB500E135E1 /* AppDelegate.swift */; };
 		9ABA5F68223BEFB500E135E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ABA5F66223BEFB500E135E1 /* Main.storyboard */; };
 		9ABA5F6A223BEFB700E135E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ABA5F69223BEFB700E135E1 /* Assets.xcassets */; };
 		9ABA5F6D223BEFB700E135E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ABA5F6B223BEFB700E135E1 /* LaunchScreen.storyboard */; };
-		9ABA5F8D223D787800E135E1 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F84223D787800E135E1 /* NetworkClient.swift */; };
-		9ABA5F8E223D787800E135E1 /* ResponseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F86223D787800E135E1 /* ResponseInterceptor.swift */; };
-		9ABA5F8F223D787800E135E1 /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F87223D787800E135E1 /* Serializer.swift */; };
-		9ABA5F90223D787800E135E1 /* RestURLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F89223D787800E135E1 /* RestURLRequestBuilder.swift */; };
-		9ABA5F91223D787800E135E1 /* RestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F8A223D787800E135E1 /* RestApi.swift */; };
-		9ABA5F93223D787800E135E1 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F8C223D787800E135E1 /* Endpoint.swift */; };
-		9ABA5F97223D792300E135E1 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F95223D792300E135E1 /* Result.swift */; };
-		9ABA5F98223D792300E135E1 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F96223D792300E135E1 /* JSON.swift */; };
 		9ABA5FA6223D799700E135E1 /* ListDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F9B223D799700E135E1 /* ListDetailBuilder.swift */; };
 		9ABA5FA7223D799700E135E1 /* ListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F9D223D799700E135E1 /* ListBuilder.swift */; };
 		9ABA5FA8223D799700E135E1 /* ListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F9E223D799700E135E1 /* ListInteractor.swift */; };
@@ -681,36 +681,24 @@
 				578C70C7223DF5E200DA4C18 /* UIStoryboard+.swift in Sources */,
 				9ABA5FBB223D7A5400E135E1 /* Photo.swift in Sources */,
 				9ABA5FB4223D79FA00E135E1 /* PhotosListService.swift in Sources */,
-				9ABA5F98223D792300E135E1 /* JSON.swift in Sources */,
 				9ABA5FB3223D79FA00E135E1 /* PhotosMapper.swift in Sources */,
-				9ABA5F93223D787800E135E1 /* Endpoint.swift in Sources */,
 				9ABA5FB7223D7A2B00E135E1 /* PhotosDTO.swift in Sources */,
 				9ABA5FA6223D799700E135E1 /* ListDetailBuilder.swift in Sources */,
 				578C70CB223E146F00DA4C18 /* EmptyRequest.swift in Sources */,
 				9ABA5FC8223DB95300E135E1 /* DetailModule.swift in Sources */,
 				9ABA5F63223BEFB500E135E1 /* AppDelegate.swift in Sources */,
-				9ABA5F8E223D787800E135E1 /* ResponseInterceptor.swift in Sources */,
-				9ABA5F91223D787800E135E1 /* RestApi.swift in Sources */,
 				9ABA5FD2223DBF2B00E135E1 /* DetailViewModel.swift in Sources */,
-				578C70D1223E22B300DA4C18 /* Errors.swift in Sources */,
 				9ABA5FAE223D799700E135E1 /* ListRouter.swift in Sources */,
 				9ABA5FC6223DB80D00E135E1 /* DetailViewController.swift in Sources */,
-				9ABA5F97223D792300E135E1 /* Result.swift in Sources */,
 				9ABA5FAC223D799700E135E1 /* ListCellModel.swift in Sources */,
-				578C70CD223E229700DA4C18 /* RestRequest.swift in Sources */,
-				9ABA5F8D223D787800E135E1 /* NetworkClient.swift in Sources */,
 				9ABA5FA8223D799700E135E1 /* ListInteractor.swift in Sources */,
-				578C70CF223E229E00DA4C18 /* RestResponse.swift in Sources */,
 				9ABA5FCC223DBECE00E135E1 /* DetailPresenter.swift in Sources */,
 				9ABA5FAB223D799700E135E1 /* ListCell.swift in Sources */,
-				9ABA5F8F223D787800E135E1 /* Serializer.swift in Sources */,
 				9ABA5FA7223D799700E135E1 /* ListBuilder.swift in Sources */,
 				9ABA5FAD223D799700E135E1 /* ListModule.swift in Sources */,
 				9ABA5FA9223D799700E135E1 /* ListPresenter.swift in Sources */,
-				578C70C9223E0FB500DA4C18 /* Dispatcher.swift in Sources */,
 				9ABA5FBF223D7A7A00E135E1 /* CellModel.swift in Sources */,
 				9ABA5FAA223D799700E135E1 /* ListViewController.swift in Sources */,
-				9ABA5F90223D787800E135E1 /* RestURLRequestBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,6 +715,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5741D515223E411300926059 /* ResponseInterceptor.swift in Sources */,
+				5741D51A223E411300926059 /* RestURLRequestBuilder.swift in Sources */,
+				5741D51B223E411300926059 /* Dispatcher.swift in Sources */,
+				5741D51C223E411300926059 /* JSON.swift in Sources */,
+				5741D51F223E411300926059 /* Errors.swift in Sources */,
+				5741D513223E40FA00926059 /* NetworkClient.swift in Sources */,
+				5741D51E223E411300926059 /* Serializer.swift in Sources */,
+				5741D516223E411300926059 /* RestApi.swift in Sources */,
+				5741D51D223E411300926059 /* Result.swift in Sources */,
+				5741D517223E411300926059 /* RestRequest.swift in Sources */,
+				5741D519223E411300926059 /* Endpoint.swift in Sources */,
+				5741D518223E411300926059 /* RestResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -903,6 +903,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B4CC31221A97A695A605603 /* Pods-NTSAssignment.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NTSAssignment/Info.plist;
@@ -928,6 +929,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F339A8058EBF0D2B4F6F77E2 /* Pods-NTSAssignment.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NTSAssignment/Info.plist;
@@ -1003,6 +1005,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = NetworkClient/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1030,6 +1033,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = NetworkClient/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

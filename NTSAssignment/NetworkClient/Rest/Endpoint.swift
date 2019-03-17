@@ -10,14 +10,14 @@ import Foundation
 
 public protocol Endpoint {
     var url: URL { get }
-    var method: Method { get }
+    var method: RestMethod { get }
 }
 
 public protocol EndpointProvider {
     var endpoint: Endpoint { get }
 }
 
-public enum Method: String {
+public enum RestMethod: String {
     case get = "GET"
     case post = "POST"
 }

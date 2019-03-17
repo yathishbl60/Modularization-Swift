@@ -10,10 +10,10 @@ import Foundation
 
 struct RestRequest {
     var url: URL
-    var method: Method
+    var method: RestMethod
     var body: [String: Any]
 
-    init(url: URL, method: Method = .get, body: [String: Any] = [:]) {
+    init(url: URL, method: RestMethod = .get, body: [String: Any] = [:]) {
         self.url = url
         self.method = method
         self.body = body
