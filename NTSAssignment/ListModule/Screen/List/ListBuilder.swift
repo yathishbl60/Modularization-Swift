@@ -9,9 +9,11 @@
 import UIKit
 import NetworkClient
 
-struct ListBuilder {
+public struct ListBuilder {
 
-    func build() -> ListViewModule {
+    public init() { }
+
+    public func build() -> ListViewModule {
         let viewController: ListViewController = UIStoryboard(storyboard: .Main).instantiateViewController()
 
         let presenter = ListPresenter()

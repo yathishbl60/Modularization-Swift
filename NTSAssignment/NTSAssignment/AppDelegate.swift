@@ -6,6 +6,7 @@
 //  Copyright © 2019 Prajwal S. All rights reserved.
 //
 
+import ListModule
 import SDWebImage
 import UIKit
 
