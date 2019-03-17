@@ -23,9 +23,15 @@ final class DetailPresenter {
 extension DetailPresenter: DetailViewOutput {
     
     func viewDidLoad() {
-        view?.display(title: "Detail")
-        view?.display(image: photo.url)
-        view?.displayText(text: photo.title)
+        view?.display(model: map(photo: photo))
     }
 
+}
+
+private extension DetailPresenter {
+    
+    func map(photo: Photo) -> DetailViewModel {
+        return DetailViewModel(title: "Detail", imageUrl: photo.url, imageDescription: photo.title)
+    }
+    
 }

@@ -11,9 +11,7 @@ import UIKit
 typealias DetailViewModule = UIViewController
 
 protocol DetailViewInput: class {
-    func display(title: String)
-    func display(image: URL)
-    func displayText(text: String)
+    func display(model: DetailViewModel)
 }
 
 protocol DetailViewOutput {

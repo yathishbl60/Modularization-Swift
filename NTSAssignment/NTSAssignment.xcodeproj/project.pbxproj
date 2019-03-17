@@ -48,6 +48,7 @@
 		5741D564223E4B2500926059 /* ListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5741D562223E4B2500926059 /* ListInteractorTests.swift */; };
 		607D7F446A08BF06E3770207 /* Pods_NTSAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389F3713D40F60179C0AB119 /* Pods_NTSAssignment.framework */; };
 		9185EC87934B3AAE159A28F5 /* Pods_NTSAssignment_ListModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D5F0A58FA070D58650B645 /* Pods_NTSAssignment_ListModule.framework */; };
+		9AB34127223E5763005D96E6 /* ListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB34126223E5763005D96E6 /* ListPresenterTests.swift */; };
 		9ABA5F63223BEFB500E135E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F62223BEFB500E135E1 /* AppDelegate.swift */; };
 		9ABA5F6A223BEFB700E135E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ABA5F69223BEFB700E135E1 /* Assets.xcassets */; };
 		9ABA5F6D223BEFB700E135E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ABA5F6B223BEFB700E135E1 /* LaunchScreen.storyboard */; };
@@ -146,6 +147,7 @@
 		5B4CC31221A97A695A605603 /* Pods-NTSAssignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTSAssignment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NTSAssignment/Pods-NTSAssignment.debug.xcconfig"; sourceTree = "<group>"; };
 		741F57693B303C00657AB16B /* Pods-NTSAssignment-ListModuleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTSAssignment-ListModuleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NTSAssignment-ListModuleTests/Pods-NTSAssignment-ListModuleTests.release.xcconfig"; sourceTree = "<group>"; };
 		7CB0304F30E50CA268D4EC55 /* Pods-NTSAssignment-ListModuleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTSAssignment-ListModuleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NTSAssignment-ListModuleTests/Pods-NTSAssignment-ListModuleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9AB34126223E5763005D96E6 /* ListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenterTests.swift; sourceTree = "<group>"; };
 		9ABA5F5F223BEFB500E135E1 /* NTSAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NTSAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ABA5F62223BEFB500E135E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9ABA5F67223BEFB500E135E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 			children = (
 				5741D561223E4B2500926059 /* ListBuilderTests.swift */,
 				5741D562223E4B2500926059 /* ListInteractorTests.swift */,
+				9AB34126223E5763005D96E6 /* ListPresenterTests.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -935,6 +938,7 @@
 			files = (
 				5741D564223E4B2500926059 /* ListInteractorTests.swift in Sources */,
 				5741D563223E4B2500926059 /* ListBuilderTests.swift in Sources */,
+				9AB34127223E5763005D96E6 /* ListPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

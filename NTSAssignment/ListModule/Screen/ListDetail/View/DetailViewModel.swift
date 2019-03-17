@@ -10,5 +10,6 @@ import Foundation
 
 struct DetailViewModel {
     let title: String
-    let url: URL
+    let imageUrl: URL
+    let imageDescription: String
 }

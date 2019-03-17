@@ -37,12 +37,24 @@
             BlueprintName = "NTSAssignment"
             ReferencedContainer = "container:NTSAssignment.xcodeproj">
          </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5741D524223E42AD00926059"
+            BuildableName = "ListModule.framework"
+            BlueprintName = "ListModule"
+            ReferencedContainer = "container:NTSAssignment.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "9ABA5FFF223E3DDB00E135E1"
+            BuildableName = "NetworkClient.framework"
+            BlueprintName = "NetworkClient"
+            ReferencedContainer = "container:NTSAssignment.xcodeproj">
+         </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
          <TestableReference
-            skipped = "NO"
-            parallelizable = "YES"
-            testExecutionOrdering = "random">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9ABA6007223E3DDB00E135E1"
@@ -52,9 +64,7 @@
             </BuildableReference>
          </TestableReference>
          <TestableReference
-            skipped = "NO"
-            parallelizable = "YES"
-            testExecutionOrdering = "random">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5741D52C223E42AD00926059"
