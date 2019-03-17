@@ -31,6 +31,7 @@ final class ListViewController: UIViewController, StoryboardIdentifiable {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 120
         tableView.refreshControl = refreshControl
+        tableView.tableFooterView = UIView()
 
         output?.viewDidLoad()
     }

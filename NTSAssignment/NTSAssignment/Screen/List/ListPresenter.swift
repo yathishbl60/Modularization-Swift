@@ -46,17 +46,17 @@ extension ListPresenter: ListViewInteractorOutput {
     func didLoad(photos: [Photo]) {
         loadedAllPhotos = photos.isEmpty
         self.photos = photos
-        view?.isLoading = !loadedAllPhotos
         view?.endPullRefreshing()
         view?.display(cells: map(photos: photos))
+        view?.isLoading = !loadedAllPhotos
     }
 
     func didLoadMore(photos: [Photo]) {
         loadedAllPhotos = photos.isEmpty
         self.photos += photos
-        view?.isLoading = !loadedAllPhotos
         view?.endPullRefreshing()
         view?.displayMore(cells: map(photos: photos))
+        view?.isLoading = !loadedAllPhotos
     }
 
     func didFailToLoadPhotos(error: Error) {
@@ -71,7 +71,7 @@ private extension ListPresenter {
 
     func map(photos: [Photo]) -> [CellModel] {
         return photos.map {
-            ListCellModel(title: $0.title, url: $0.url, thumb: $0.thumbnailUrl)
+            ListCellModel(title: $0.title, thumb: $0.thumbnailUrl)
         }
     }
 
