@@ -19,7 +19,7 @@ final class ListInteractor {
         request = firstPageRequest
     }
 
-    func performRequest() {
+    private func performRequest() {
         let currentRequest = request
         service.fetchPhotos(request: request) { [weak self] response in
             switch response {

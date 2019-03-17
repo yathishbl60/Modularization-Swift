@@ -52,6 +52,7 @@ final class ListInteractorTests: XCTestCase {
         // then
         XCTAssertEqual(service.request, PhotosListRequestParams(page: 0, limit: 10))
         XCTAssertEqual(output.samples, service.result.value)
+        XCTAssertTrue(output.didLoadCalled)
     }
 
     func testLoadMorePhotosSuccess() {
@@ -74,9 +75,14 @@ final class ListInteractorTests: XCTestCase {
         // then
         XCTAssertEqual(service.request, PhotosListRequestParams(page: 1, limit: 10))
         XCTAssertEqual(output.samples, service.result.value)
+        XCTAssertTrue(output.didLoadMoreCalled)
 
+        output.didLoadMoreCalled = false
         interactor.loadMorePhotos()
         XCTAssertEqual(service.request, PhotosListRequestParams(page: 2, limit: 10))
+        XCTAssertTrue(output.didLoadMoreCalled)
+
+        XCTAssertFalse(output.didLoadCalled)
     }
 
     func testLoadPhotosFailure() {
@@ -121,12 +127,16 @@ private extension ListInteractorTests {
     final class OutputMock: ListViewInteractorOutput {
         var samples: [Photo]?
         var error: Error?
-        
+
+        var didLoadCalled = false
         func didLoad(photos: [Photo]) {
+            didLoadCalled = true
             self.samples = photos
         }
-        
+
+        var didLoadMoreCalled = false
         func didLoadMore(photos: [Photo]) {
+            didLoadMoreCalled = true
             self.samples = photos
         }
         
