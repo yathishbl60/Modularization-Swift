@@ -16,7 +16,6 @@ final class ListPresenterTests: XCTestCase {
     private var view: MockView!
     private var interactor: MockInteractor!
     
-    
     override func setUp() {
         super.setUp()
         
@@ -40,45 +39,139 @@ final class ListPresenterTests: XCTestCase {
     }
 
     func testViewIsReady() {
-
+        // when
+        presenter.viewDidLoad()
+        
+        // then
+        XCTAssertEqual(view.title, "Photos")
+        XCTAssertTrue(view.isLoading ?? false)
+        XCTAssertTrue(interactor.loadPhotosCalled)
     }
 
     func testDidSelectItem() {
-
+        // given
+        let photos = mockPhotos()
+        presenter.didLoad(photos: photos)
+        let indexPath = IndexPath(row: 0, section: 0)
+        
+        // when
+        presenter.didSelect(indexPath: indexPath)
+        
+        // then
+        let photo = router.photo
+        XCTAssertEqual(photo, photos.first)
     }
 
     func testDidPullToRefresh() {
-
+        // when
+        presenter.didPullRefresh()
+        
+        // then
+        XCTAssertTrue(view.isLoading ?? false)
+        XCTAssertTrue(interactor.loadPhotosCalled)
     }
 
     func testDidScrollToBottomWhenAlreadyLoading() {
-
+        // given
+        view.isLoading = true
+        
+        // when
+        presenter.didScrollToBottom()
+        
+        // then
+        XCTAssertTrue(view.isLoading ?? false)
+        XCTAssertTrue(interactor.loadMorePhotosCalled)
     }
 
     func testDidScrollToBottomWhenNotLoading() {
-
+        // given
+        view.isLoading = false
+        
+        // when
+        presenter.didScrollToBottom()
+        
+        // then
+        XCTAssertTrue(view.isLoading ?? false)
+        XCTAssertTrue(interactor.loadMorePhotosCalled)
     }
 
     func testDidScrollToBottomWhenAllItemsLoaded() {
-
+        // given
+        view.isLoading = false
+        presenter.didLoad(photos: [])
+        
+        // when
+        presenter.didScrollToBottom()
+        
+        // then
+        XCTAssertTrue((view.isLoading ?? false) == false)
+        XCTAssertTrue(interactor.loadMorePhotosCalled)
     }
 
     func testDidLoadPhotos() {
-
+        // given
+        let photos = mockPhotos()
+        
+        // when
+        presenter.didLoad(photos: photos)
+        
+        // then
+        XCTAssertTrue(view.endPullRefreshingCalled)
+        XCTAssertTrue(view.displayCellsCalled)
+        XCTAssertTrue(view.cells.count == 2)
+        XCTAssertTrue(view.isLoading ?? false)
     }
 
     func testDidLoadMorePhotos() {
-
+        // given
+        let photos = mockPhotos()
+        presenter.didLoad(photos: photos)
+        
+        // when
+        presenter.didLoadMore(photos: photos)
+        
+        // then
+        XCTAssertTrue(view.endPullRefreshingCalled)
+        XCTAssertTrue(view.displayCellsCalled)
+        XCTAssertTrue(view.cells.count == 2)
+        XCTAssertTrue(view.isLoading ?? false)
     }
 
     func testDidFailToLoadPhotos() {
-
+        // given
+        let error = MockError.sampleError
+        
+        // when
+        presenter.didFailToLoadPhotos(error: error)
+        
+        // then
+        XCTAssertTrue((view.isLoading ?? false) == false)
+        XCTAssertTrue(view.endPullRefreshingCalled)
+        XCTAssertEqual(view.errorMessage, "Something went wrong!!")
     }
     
 }
 
-
 private extension ListPresenterTests {
+    
+    func mockPhotos() -> [Photo] {
+        let mockPhoto1 = Photo(id: 1,
+                               albumId: 12,
+                               title: "a",
+                               url: URL(string:  "https://g.com/1")!,
+                               thumbnailUrl: URL(string:"https://gggt.com/1")!)
+        let mockPhoto2 = Photo(id: 2,
+                               albumId: 22,
+                               title: "b",
+                               url: URL(string:"https://g.com/2")!,
+                               thumbnailUrl: URL(string:"https://gggt.com/2")!)
+        let photos = [mockPhoto1, mockPhoto2]
+        return photos
+    }
+    
+    enum MockError: Error {
+        case sampleError
+    }
     
     final class MockView: ListViewInput {
 
