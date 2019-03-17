@@ -78,7 +78,7 @@ final class ListPresenterTests: XCTestCase {
         presenter.didScrollToBottom()
         
         // then
-        XCTAssertFalse(view.isLoading!)
+        XCTAssertNil(view.isLoading)
         XCTAssertFalse(interactor.loadMorePhotosCalled)
     }
 
