@@ -23,7 +23,7 @@ final class DetailPresenter {
 extension DetailPresenter: DetailViewOutput {
     
     func viewDidLoad() {
-        view?.display(title: "Photo Detail")
+        view?.display(title: "Detail")
         view?.display(image: photo.url)
         view?.displayText(text: photo.title)
     }
