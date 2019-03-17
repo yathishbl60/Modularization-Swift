@@ -17,4 +17,9 @@ target 'NTSAssignment' do
       pod 'SDWebImage'
   end
 
+  target 'ListModuleTests' do
+    use_frameworks!
+    pod 'SDWebImage'
+  end
+
 end

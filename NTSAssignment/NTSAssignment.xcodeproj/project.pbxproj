@@ -59,6 +59,7 @@
 		9ABA6012223E3DDC00E135E1 /* NetworkClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABA6002223E3DDB00E135E1 /* NetworkClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9ABA6015223E3DDC00E135E1 /* NetworkClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ABA6000223E3DDB00E135E1 /* NetworkClient.framework */; };
 		9ABA6016223E3DDC00E135E1 /* NetworkClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9ABA6000223E3DDB00E135E1 /* NetworkClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EC98D77D50B24BBEE36FA923 /* Pods_NTSAssignment_ListModuleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F12ED2607A6896C12A9718CA /* Pods_NTSAssignment_ListModuleTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +147,8 @@
 		578C70CE223E229E00DA4C18 /* RestResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestResponse.swift; sourceTree = "<group>"; };
 		578C70D0223E22B300DA4C18 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		5B4CC31221A97A695A605603 /* Pods-NTSAssignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTSAssignment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NTSAssignment/Pods-NTSAssignment.debug.xcconfig"; sourceTree = "<group>"; };
+		741F57693B303C00657AB16B /* Pods-NTSAssignment-ListModuleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTSAssignment-ListModuleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NTSAssignment-ListModuleTests/Pods-NTSAssignment-ListModuleTests.release.xcconfig"; sourceTree = "<group>"; };
+		7CB0304F30E50CA268D4EC55 /* Pods-NTSAssignment-ListModuleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTSAssignment-ListModuleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NTSAssignment-ListModuleTests/Pods-NTSAssignment-ListModuleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9ABA5F5F223BEFB500E135E1 /* NTSAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NTSAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ABA5F62223BEFB500E135E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9ABA5F67223BEFB500E135E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -192,6 +195,7 @@
 		A0D5F0A58FA070D58650B645 /* Pods_NTSAssignment_ListModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NTSAssignment_ListModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2E6279C094DBE5DE81A3D75 /* Pods-NTSAssignment-ListModule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTSAssignment-ListModule.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NTSAssignment-ListModule/Pods-NTSAssignment-ListModule.debug.xcconfig"; sourceTree = "<group>"; };
 		D909ED97277E58A0CC7B3661 /* Pods-NTSAssignment-ListModule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTSAssignment-ListModule.release.xcconfig"; path = "Pods/Target Support Files/Pods-NTSAssignment-ListModule/Pods-NTSAssignment-ListModule.release.xcconfig"; sourceTree = "<group>"; };
+		F12ED2607A6896C12A9718CA /* Pods_NTSAssignment_ListModuleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NTSAssignment_ListModuleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F339A8058EBF0D2B4F6F77E2 /* Pods-NTSAssignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTSAssignment.release.xcconfig"; path = "Pods/Target Support Files/Pods-NTSAssignment/Pods-NTSAssignment.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -209,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5741D52E223E42AD00926059 /* ListModule.framework in Frameworks */,
+				EC98D77D50B24BBEE36FA923 /* Pods_NTSAssignment_ListModuleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +297,7 @@
 				389F3713D40F60179C0AB119 /* Pods_NTSAssignment.framework */,
 				42C2EDDE84B5C13DA09FFB54 /* Pods_NTSAssignmentTests.framework */,
 				A0D5F0A58FA070D58650B645 /* Pods_NTSAssignment_ListModule.framework */,
+				F12ED2607A6896C12A9718CA /* Pods_NTSAssignment_ListModuleTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -305,6 +311,8 @@
 				3A84626D093748101D5FBE21 /* Pods-NTSAssignmentTests.release.xcconfig */,
 				C2E6279C094DBE5DE81A3D75 /* Pods-NTSAssignment-ListModule.debug.xcconfig */,
 				D909ED97277E58A0CC7B3661 /* Pods-NTSAssignment-ListModule.release.xcconfig */,
+				7CB0304F30E50CA268D4EC55 /* Pods-NTSAssignment-ListModuleTests.debug.xcconfig */,
+				741F57693B303C00657AB16B /* Pods-NTSAssignment-ListModuleTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -563,9 +571,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5741D53F223E42AD00926059 /* Build configuration list for PBXNativeTarget "ListModuleTests" */;
 			buildPhases = (
+				12DA0F01FFA664AE1283D7F7 /* [CP] Check Pods Manifest.lock */,
 				5741D529223E42AD00926059 /* Sources */,
 				5741D52A223E42AD00926059 /* Frameworks */,
 				5741D52B223E42AD00926059 /* Resources */,
+				8895998238003C1AD99572F9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -671,7 +681,6 @@
 					};
 					5741D52C223E42AD00926059 = {
 						CreatedOnToolsVersion = 10.1;
-						TestTargetID = 9ABA5F5E223BEFB500E135E1;
 					};
 					9ABA5F5E223BEFB500E135E1 = {
 						CreatedOnToolsVersion = 10.1;
@@ -685,7 +694,6 @@
 					};
 					9ABA6007223E3DDB00E135E1 = {
 						CreatedOnToolsVersion = 10.1;
-						TestTargetID = 9ABA5F5E223BEFB500E135E1;
 					};
 				};
 			};
@@ -762,6 +770,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		12DA0F01FFA664AE1283D7F7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NTSAssignment-ListModuleTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5DB3A7568859181691F5740F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -804,6 +834,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8895998238003C1AD99572F9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NTSAssignment-ListModuleTests/Pods-NTSAssignment-ListModuleTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NTSAssignment-ListModuleTests/Pods-NTSAssignment-ListModuleTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AF8768FCA663EEC78C706260 /* [CP] Check Pods Manifest.lock */ = {
@@ -1052,6 +1104,7 @@
 		};
 		5741D540223E42AD00926059 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CB0304F30E50CA268D4EC55 /* Pods-NTSAssignment-ListModuleTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1066,12 +1119,12 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NTSAssignment.app/NTSAssignment";
 			};
 			name = Debug;
 		};
 		5741D541223E42AD00926059 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 741F57693B303C00657AB16B /* Pods-NTSAssignment-ListModuleTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1086,7 +1139,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NTSAssignment.app/NTSAssignment";
 			};
 			name = Release;
 		};
@@ -1371,7 +1423,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NTSAssignment.app/NTSAssignment";
 			};
 			name = Debug;
 		};
@@ -1390,7 +1441,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NTSAssignment.app/NTSAssignment";
 			};
 			name = Release;
 		};
