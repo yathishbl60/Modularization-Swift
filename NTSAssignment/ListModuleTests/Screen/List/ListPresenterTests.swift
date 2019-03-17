@@ -70,10 +70,22 @@ final class ListPresenterTests: XCTestCase {
         XCTAssertTrue(interactor.loadPhotosCalled)
     }
 
-    func testDidScrollToBottom() {
+    func testDidScrollToBottomWhenAllLoaded() {
+        presenter.didLoad(photos: [])
+        view.isLoading = nil
+
         // when
         presenter.didScrollToBottom()
         
+        // then
+        XCTAssertFalse(view.isLoading!)
+        XCTAssertFalse(interactor.loadMorePhotosCalled)
+    }
+
+    func testDidScrollToBottomWhenAlreadingLoading() {
+        // when
+        presenter.didScrollToBottom()
+
         // then
         XCTAssertTrue(view.isLoading!)
         XCTAssertTrue(interactor.loadMorePhotosCalled)
@@ -155,18 +167,20 @@ final class ListPresenterTests: XCTestCase {
 private extension ListPresenterTests {
     
     var mockPhotos: [Photo] {
-        let mockPhoto1 = Photo(id: 1,
-                               albumId: 12,
-                               title: "a",
-                               url: URL(string:  "https://g.com/1")!,
-                               thumbnailUrl: URL(string:"https://gggt.com/1")!)
-        let mockPhoto2 = Photo(id: 2,
-                               albumId: 22,
-                               title: "b",
-                               url: URL(string:"https://g.com/2")!,
-                               thumbnailUrl: URL(string:"https://gggt.com/2")!)
-        let photos = [mockPhoto1, mockPhoto2]
-        return photos
+        return [
+            Photo(id: 1,
+                  albumId: 12,
+                  title: "a",
+                  url: URL(string:  "https://g.com/1")!,
+                  thumbnailUrl: URL(string:"https://gggt.com/1")!
+            ),
+            Photo(id: 2,
+                  albumId: 22,
+                  title: "b",
+                  url: URL(string:"https://g.com/2")!,
+                  thumbnailUrl: URL(string:"https://gggt.com/2")!
+            )
+        ]
     }
     
     enum MockError: Error {
