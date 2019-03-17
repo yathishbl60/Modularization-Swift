@@ -7,27 +7,72 @@
 //
 
 import XCTest
+@testable import ListModule
 
-class ListPresenterTests: XCTestCase {
-
+final class ListPresenterTests: XCTestCase {
+    
+    private var presenter: ListPresenter!
+    private var router: MockRouter!
+    private var view: MockView!
+    private var interactor: MockInteractor!
+    
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        
+        presenter = ListPresenter()
+        router = MockRouter()
+//        router.display(photo: <#T##Photo#>)
     }
+    
+}
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+private extension ListPresenterTests {
+    
+    final class MockView: ListViewInput {
+        
+        func display(cells: [CellModel]) {
+            
+        }
+        
+        func displayMore(cells: [CellModel]) {
+            
+        }
+        
+        func display(title: String) {
+            
+        }
+        
+        func display(isLoading: Bool) {
+            
+        }
+        
+        func endPullRefreshing() {
+            
+        }
+        
+        func displayError(message: String) {
+            
         }
     }
-
+    
+    final class MockRouter: ListRouterInput {
+        
+        func display(photo: Photo) {
+            
+        }
+    }
+    
+    final class MockInteractor: ListViewInteractorInput {
+        
+        func loadPhotos() {
+            
+        }
+        
+        func loadMorePhotos() {
+            
+        }
+    }
+    
 }

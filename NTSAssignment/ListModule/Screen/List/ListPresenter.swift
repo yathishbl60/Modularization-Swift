@@ -20,7 +20,7 @@ extension ListPresenter: ListViewOutput {
 
     func viewDidLoad() {
         view?.display(title: "Photos")
-        view?.isLoading = true
+        view?.display(isLoading: true)
         interactor?.loadPhotos()
     }
 
@@ -31,12 +31,12 @@ extension ListPresenter: ListViewOutput {
 
     func didPullRefresh() {
         loadedAllPhotos = false
-        view?.isLoading = true
+        view?.display(isLoading: true)
         interactor?.loadPhotos()
     }
     
     func didScrollToBottom() {
-        view?.isLoading = !loadedAllPhotos
+        view?.display(isLoading: !loadedAllPhotos)
         interactor?.loadMorePhotos()
     }
 }
@@ -48,7 +48,7 @@ extension ListPresenter: ListViewInteractorOutput {
         self.photos = photos
         view?.endPullRefreshing()
         view?.display(cells: map(photos: photos))
-        view?.isLoading = !loadedAllPhotos
+        view?.display(isLoading: !loadedAllPhotos)
     }
 
     func didLoadMore(photos: [Photo]) {
@@ -56,11 +56,11 @@ extension ListPresenter: ListViewInteractorOutput {
         self.photos += photos
         view?.endPullRefreshing()
         view?.displayMore(cells: map(photos: photos))
-        view?.isLoading = !loadedAllPhotos
+        view?.display(isLoading: !loadedAllPhotos)
     }
 
     func didFailToLoadPhotos(error: Error) {
-        view?.isLoading = false
+        view?.display(isLoading: false)
         view?.endPullRefreshing()
         view?.displayError(message: map(error: error))
     }

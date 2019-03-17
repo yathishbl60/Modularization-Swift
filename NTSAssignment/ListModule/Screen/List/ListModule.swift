@@ -14,7 +14,7 @@ protocol ListViewInput: class {
     func display(cells: [CellModel])
     func displayMore(cells: [CellModel])
     func display(title: String)
-    var isLoading: Bool { get set }
+    func display(isLoading: Bool)
     func endPullRefreshing()
     func displayError(message: String)
 }

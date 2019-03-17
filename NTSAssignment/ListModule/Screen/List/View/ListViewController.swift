@@ -58,7 +58,7 @@ final class ListViewController: UIViewController, StoryboardIdentifiable {
 }
 
 extension ListViewController: ListViewInput {
-
+    
     func display(cells: [CellModel]) {
         cellModels = cells
         tableView.reloadData()

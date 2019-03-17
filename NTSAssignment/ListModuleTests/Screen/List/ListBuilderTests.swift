@@ -9,7 +9,7 @@
 @testable import ListModule
 import XCTest
 
-class ListBuilderTests: XCTestCase {
+final class ListBuilderTests: XCTestCase {
 
     func testBuild() {
         //given
