@@ -8,20 +8,10 @@
 
 import UIKit
 
-final class ListViewController: UIViewController, StoryboardIdentifiable {
+final class ListViewController: UITableViewController, StoryboardIdentifiable {
     
     var output: ListViewOutput?
     private var cellModels: [CellModel] = []
-
-    @IBOutlet private weak var tableView: UITableView!
-    
-    private lazy var refreshControl: UIRefreshControl = {
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(ListViewController.handleRefresh), for: .valueChanged)
-        refreshControl.tintColor = .gray
-
-        return refreshControl
-    }()
 
     private var loadMoreIndicator: UIView {
         let spinner = UIActivityIndicatorView(style: .gray)
@@ -37,20 +27,12 @@ final class ListViewController: UIViewController, StoryboardIdentifiable {
 
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 120
-        tableView.refreshControl = refreshControl
         tableView.tableFooterView = UIView()
+        refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
 
         output?.viewDidLoad()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        if let indexPath = tableView.indexPathForSelectedRow {
-            tableView.deselectRow(at: indexPath, animated: animated)
-        }
-    }
-    
     @objc private func handleRefresh() {
         output?.didPullRefresh()
     }
@@ -86,23 +68,27 @@ extension ListViewController: ListViewInput {
     }
 
     func endPullRefreshing() {
-        refreshControl.endRefreshing()
+        // https://stackoverflow.com/questions/28560068/uirefreshcontrol-endrefreshing-is-not-smooth
+        DispatchQueue.main.async {
+            self.refreshControl?.endRefreshing()
+        }
     }
 
     func displayError(message: String) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
     }
 
 }
 
-extension ListViewController: UITableViewDataSource {
+extension ListViewController {
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellModels.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellModel = cellModels[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: type(of: cellModel).cellId, for: indexPath)
         (cell as? CellConfigurable)?.configure(model: cellModel)
@@ -112,18 +98,18 @@ extension ListViewController: UITableViewDataSource {
 
 }
 
-extension ListViewController: UITableViewDelegate {
+extension ListViewController {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         output?.didSelect(indexPath: indexPath)
     }
 
 }
 
-extension ListViewController: UIScrollViewDelegate {
+extension ListViewController {
 
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let threshold: CGFloat = 100.0 // threshold from bottom of tableView
+    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let threshold: CGFloat = 120.0 // threshold from bottom of tableView
         let contentOffset = scrollView.contentOffset.y
         let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height;
         if (maximumOffset - contentOffset <= threshold) {
