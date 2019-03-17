@@ -22,7 +22,6 @@
 		5741D51F223E411300926059 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578C70D0223E22B300DA4C18 /* Errors.swift */; };
 		5741D52E223E42AD00926059 /* ListModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5741D525223E42AD00926059 /* ListModule.framework */; };
 		5741D535223E42AD00926059 /* ListModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5741D534223E42AD00926059 /* ListModuleTests.swift */; };
-		5741D537223E42AD00926059 /* ListModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 5741D527223E42AD00926059 /* ListModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5741D53A223E42AD00926059 /* ListModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5741D525223E42AD00926059 /* ListModule.framework */; };
 		5741D53B223E42AD00926059 /* ListModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5741D525223E42AD00926059 /* ListModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5741D542223E42E300926059 /* ListModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5FA4223D799700E135E1 /* ListModule.swift */; };
@@ -56,7 +55,6 @@
 		9ABA5FD7223E365A00E135E1 /* ListBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5FD6223E365A00E135E1 /* ListBuilderTests.swift */; };
 		9ABA6009223E3DDC00E135E1 /* NetworkClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ABA6000223E3DDB00E135E1 /* NetworkClient.framework */; };
 		9ABA6010223E3DDC00E135E1 /* NetworkClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA600F223E3DDC00E135E1 /* NetworkClientTests.swift */; };
-		9ABA6012223E3DDC00E135E1 /* NetworkClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 9ABA6002223E3DDB00E135E1 /* NetworkClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9ABA6015223E3DDC00E135E1 /* NetworkClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ABA6000223E3DDB00E135E1 /* NetworkClient.framework */; };
 		9ABA6016223E3DDC00E135E1 /* NetworkClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9ABA6000223E3DDB00E135E1 /* NetworkClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EC98D77D50B24BBEE36FA923 /* Pods_NTSAssignment_ListModuleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F12ED2607A6896C12A9718CA /* Pods_NTSAssignment_ListModuleTests.framework */; };
@@ -135,7 +133,6 @@
 		3A84626D093748101D5FBE21 /* Pods-NTSAssignmentTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTSAssignmentTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NTSAssignmentTests/Pods-NTSAssignmentTests.release.xcconfig"; sourceTree = "<group>"; };
 		42C2EDDE84B5C13DA09FFB54 /* Pods_NTSAssignmentTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NTSAssignmentTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5741D525223E42AD00926059 /* ListModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ListModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5741D527223E42AD00926059 /* ListModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListModule.h; sourceTree = "<group>"; };
 		5741D528223E42AD00926059 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5741D52D223E42AD00926059 /* ListModuleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ListModuleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5741D534223E42AD00926059 /* ListModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModuleTests.swift; sourceTree = "<group>"; };
@@ -187,7 +184,6 @@
 		9ABA5FD4223DC5E100E135E1 /* ListInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListInteractorTests.swift; sourceTree = "<group>"; };
 		9ABA5FD6223E365A00E135E1 /* ListBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBuilderTests.swift; sourceTree = "<group>"; };
 		9ABA6000223E3DDB00E135E1 /* NetworkClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9ABA6002223E3DDB00E135E1 /* NetworkClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkClient.h; sourceTree = "<group>"; };
 		9ABA6008223E3DDB00E135E1 /* NetworkClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ABA600F223E3DDC00E135E1 /* NetworkClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientTests.swift; sourceTree = "<group>"; };
 		9ABA6011223E3DDC00E135E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -259,7 +255,6 @@
 				5741D558223E46B000926059 /* Resources */,
 				9ABA5F99223D799700E135E1 /* Screen */,
 				9ABA5FAF223D79FA00E135E1 /* Service */,
-				5741D527223E42AD00926059 /* ListModule.h */,
 				5741D528223E42AD00926059 /* Info.plist */,
 			);
 			path = ListModule;
@@ -511,7 +506,6 @@
 				9ABA5F83223D787800E135E1 /* Client */,
 				9ABA5F88223D787800E135E1 /* Rest */,
 				9ABA5F94223D792300E135E1 /* Utils */,
-				9ABA6002223E3DDB00E135E1 /* NetworkClient.h */,
 				9ABA601D223E3E3D00E135E1 /* Info.plist */,
 			);
 			path = NetworkClient;
@@ -533,7 +527,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5741D537223E42AD00926059 /* ListModule.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,7 +534,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9ABA6012223E3DDC00E135E1 /* NetworkClient.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
