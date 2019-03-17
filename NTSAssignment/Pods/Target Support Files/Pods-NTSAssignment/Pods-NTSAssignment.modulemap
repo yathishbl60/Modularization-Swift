@@ -1,6 +1,0 @@
-framework module Pods_NTSAssignment {
-  umbrella header "Pods-NTSAssignment-umbrella.h"
-
-  export *
-  module * { export * }
-}
