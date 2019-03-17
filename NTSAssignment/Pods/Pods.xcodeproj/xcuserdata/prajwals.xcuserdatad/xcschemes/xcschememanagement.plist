@@ -4,6 +4,20 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-NTSAssignment-ListModule.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>Pods-NTSAssignment-ListModuleTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 		<key>Pods-NTSAssignment.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,6 +41,17 @@
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>B53570CEC952A15CAED02F846B435EC5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D22541F30D47DD409A114BBCCD79B319</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>

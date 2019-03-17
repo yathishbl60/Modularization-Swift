@@ -25,15 +25,9 @@ final class DetailViewController: UIViewController, StoryboardIdentifiable {
 
 extension DetailViewController: DetailViewInput {
     
-    func display(title: String) {
-        self.title = title
-    }
-
-    func display(image: URL) {
-        detailImageView.sd_setImage(with: image)
-    }
-    
-    func displayText(text: String) {
-        detailTextLabel.text = text
+    func display(model: DetailViewModel) {
+        self.title = model.title
+        detailImageView.sd_setImage(with: model.imageUrl)
+        detailTextLabel.text = model.imageDescription
     }
 }
