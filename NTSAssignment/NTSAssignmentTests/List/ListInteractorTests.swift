@@ -32,36 +32,72 @@ final class ListInteractorTests: XCTestCase {
         super.tearDown()
     }
 
-    func testSuccess() {
+    func testLoadPhotosSuccess() {
         // given
         let mockPhoto1 = Photo(id: 1,
-                                albumId: 12,
-                                title: "dfsdfsdf",
-                                url: URL(string:  "https://g.com/1")!,
-                                thumbnailUrl: URL(string:"https://gggt.com/1")!)
+                               albumId: 12,
+                               title: "a",
+                               url: URL(string:  "https://g.com/1")!,
+                               thumbnailUrl: URL(string:"https://gggt.com/1")!)
         let mockPhoto2 = Photo(id: 2,
-                                albumId: 22,
-                                title: "dfervrrr",
-                                url: URL(string:"https://g.com/2")!,
-                                thumbnailUrl: URL(string:"https://gggt.com/2")!)
+                               albumId: 22,
+                               title: "b",
+                               url: URL(string:"https://g.com/2")!,
+                               thumbnailUrl: URL(string:"https://gggt.com/2")!)
         service.result = .success([mockPhoto1, mockPhoto2])
 
         // when
         interactor.loadPhotos()
+
+        // then
+        XCTAssertEqual(service.request, PhotosListRequestParams(page: 0, limit: 10))
+        XCTAssertEqual(output.samples, service.result.value)
+    }
+
+    func testLoadMorePhotosSuccess() {
+        // given
+        let mockPhoto1 = Photo(id: 1,
+                               albumId: 12,
+                               title: "a",
+                               url: URL(string:  "https://g.com/1")!,
+                               thumbnailUrl: URL(string:"https://gggt.com/1")!)
+        let mockPhoto2 = Photo(id: 2,
+                               albumId: 22,
+                               title: "b",
+                               url: URL(string:"https://g.com/2")!,
+                               thumbnailUrl: URL(string:"https://gggt.com/2")!)
+        service.result = .success([mockPhoto1, mockPhoto2])
+
+        // when
         interactor.loadMorePhotos()
 
         // then
         XCTAssertEqual(service.request, PhotosListRequestParams(page: 1, limit: 10))
         XCTAssertEqual(output.samples, service.result.value)
+
+        interactor.loadMorePhotos()
+        XCTAssertEqual(service.request, PhotosListRequestParams(page: 2, limit: 10))
     }
 
-    func testFailure() {
+    func testLoadPhotosFailure() {
         // given
         let error = MockError.sampleError
         service.result = .failure(error)
 
         // when
         interactor.loadPhotos()
+
+        // then
+        XCTAssertEqual(service.request, PhotosListRequestParams(page: 0, limit: 10))
+        XCTAssertEqual(output.error as! MockError,  error)
+    }
+
+    func testLoadMorePhotosFailure() {
+        // given
+        let error = MockError.sampleError
+        service.result = .failure(error)
+
+        // when
         interactor.loadMorePhotos()
 
         // then
