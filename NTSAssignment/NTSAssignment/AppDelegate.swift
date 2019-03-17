@@ -21,6 +21,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         SDImageCache.shared().clearDisk()
 
         window = UIWindow(frame: UIScreen.main.bounds)
+        window?.tintColor = #colorLiteral(red: 0.9215686275, green: 0.1960784314, blue: 0.137254902, alpha: 1)
+
         let viewController = ListBuilder().build()
         window?.rootViewController = UINavigationController(rootViewController: viewController)
         window?.makeKeyAndVisible()
