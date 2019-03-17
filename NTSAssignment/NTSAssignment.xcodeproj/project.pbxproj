@@ -19,7 +19,6 @@
 		9ABA5F68223BEFB500E135E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ABA5F66223BEFB500E135E1 /* Main.storyboard */; };
 		9ABA5F6A223BEFB700E135E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ABA5F69223BEFB700E135E1 /* Assets.xcassets */; };
 		9ABA5F6D223BEFB700E135E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ABA5F6B223BEFB700E135E1 /* LaunchScreen.storyboard */; };
-		9ABA5F78223BEFB700E135E1 /* NTSAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F77223BEFB700E135E1 /* NTSAssignmentTests.swift */; };
 		9ABA5F8D223D787800E135E1 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F84223D787800E135E1 /* NetworkClient.swift */; };
 		9ABA5F8E223D787800E135E1 /* ResponseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F86223D787800E135E1 /* ResponseInterceptor.swift */; };
 		9ABA5F8F223D787800E135E1 /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F87223D787800E135E1 /* Serializer.swift */; };
@@ -79,7 +78,6 @@
 		9ABA5F6C223BEFB700E135E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9ABA5F6E223BEFB700E135E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9ABA5F73223BEFB700E135E1 /* NTSAssignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NTSAssignmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9ABA5F77223BEFB700E135E1 /* NTSAssignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTSAssignmentTests.swift; sourceTree = "<group>"; };
 		9ABA5F79223BEFB700E135E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9ABA5F84223D787800E135E1 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		9ABA5F86223D787800E135E1 /* ResponseInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseInterceptor.swift; sourceTree = "<group>"; };
@@ -201,7 +199,6 @@
 			isa = PBXGroup;
 			children = (
 				9ABA5FD3223DC5E100E135E1 /* List */,
-				9ABA5F77223BEFB700E135E1 /* NTSAssignmentTests.swift */,
 				9ABA5F79223BEFB700E135E1 /* Info.plist */,
 			);
 			path = NTSAssignmentTests;
@@ -570,7 +567,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9ABA5FD5223DC5E100E135E1 /* ListInteractorTests.swift in Sources */,
-				9ABA5F78223BEFB700E135E1 /* NTSAssignmentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

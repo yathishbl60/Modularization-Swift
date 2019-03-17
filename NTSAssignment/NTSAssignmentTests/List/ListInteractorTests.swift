@@ -51,7 +51,7 @@ final class ListInteractorTests: XCTestCase {
         interactor.loadMorePhotos()
 
         // then
-//        XCTAssertEqual(service.request, PhotosListRequestParams(page: 10, limit: 10))
+        XCTAssertEqual(service.request, PhotosListRequestParams(page: 1, limit: 10))
         XCTAssertEqual(output.samples, service.result.value)
     }
 
@@ -65,7 +65,7 @@ final class ListInteractorTests: XCTestCase {
         interactor.loadMorePhotos()
 
         // then
-//        XCTAssertEqual(service.request, PhotosListRequestParams(page: 10, limit: 10))
+        XCTAssertEqual(service.request, PhotosListRequestParams(page: 1, limit: 10))
         XCTAssertEqual(output.error as! MockError,  error)
     }
 
