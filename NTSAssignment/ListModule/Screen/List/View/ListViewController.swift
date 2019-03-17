@@ -90,8 +90,8 @@ extension ListViewController: ListViewInput {
     }
 
     func displayError(message: String) {
-        //display error alert!
-        
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        present(alert, animated: true, completion: nil)
     }
 
 }
