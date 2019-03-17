@@ -16,3 +16,8 @@ protocol Endpoint {
 protocol EndpointProvider {
     var endpoint: Endpoint { get }
 }
+
+enum Method: String {
+    case get = "GET"
+    case post = "POST"
+}

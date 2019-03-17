@@ -27,7 +27,6 @@ final class ListViewController: UIViewController, StoryboardIdentifiable {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .white
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 120
         tableView.refreshControl = refreshControl

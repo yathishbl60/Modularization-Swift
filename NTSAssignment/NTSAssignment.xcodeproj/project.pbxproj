@@ -11,6 +11,9 @@
 		578C70C7223DF5E200DA4C18 /* UIStoryboard+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578C70C6223DF5E200DA4C18 /* UIStoryboard+.swift */; };
 		578C70C9223E0FB500DA4C18 /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578C70C8223E0FB500DA4C18 /* Dispatcher.swift */; };
 		578C70CB223E146F00DA4C18 /* EmptyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578C70CA223E146F00DA4C18 /* EmptyRequest.swift */; };
+		578C70CD223E229700DA4C18 /* RestRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578C70CC223E229600DA4C18 /* RestRequest.swift */; };
+		578C70CF223E229E00DA4C18 /* RestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578C70CE223E229E00DA4C18 /* RestResponse.swift */; };
+		578C70D1223E22B300DA4C18 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578C70D0223E22B300DA4C18 /* Errors.swift */; };
 		607D7F446A08BF06E3770207 /* Pods_NTSAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389F3713D40F60179C0AB119 /* Pods_NTSAssignment.framework */; };
 		9ABA5F63223BEFB500E135E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F62223BEFB500E135E1 /* AppDelegate.swift */; };
 		9ABA5F68223BEFB500E135E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ABA5F66223BEFB500E135E1 /* Main.storyboard */; };
@@ -20,9 +23,8 @@
 		9ABA5F8D223D787800E135E1 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F84223D787800E135E1 /* NetworkClient.swift */; };
 		9ABA5F8E223D787800E135E1 /* ResponseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F86223D787800E135E1 /* ResponseInterceptor.swift */; };
 		9ABA5F8F223D787800E135E1 /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F87223D787800E135E1 /* Serializer.swift */; };
-		9ABA5F90223D787800E135E1 /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F89223D787800E135E1 /* URLRequestBuilder.swift */; };
+		9ABA5F90223D787800E135E1 /* RestURLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F89223D787800E135E1 /* RestURLRequestBuilder.swift */; };
 		9ABA5F91223D787800E135E1 /* RestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F8A223D787800E135E1 /* RestApi.swift */; };
-		9ABA5F92223D787800E135E1 /* RestCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F8B223D787800E135E1 /* RestCore.swift */; };
 		9ABA5F93223D787800E135E1 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F8C223D787800E135E1 /* Endpoint.swift */; };
 		9ABA5F97223D792300E135E1 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F95223D792300E135E1 /* Result.swift */; };
 		9ABA5F98223D792300E135E1 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F96223D792300E135E1 /* JSON.swift */; };
@@ -39,14 +41,11 @@
 		9ABA5FB4223D79FA00E135E1 /* PhotosListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5FB2223D79FA00E135E1 /* PhotosListService.swift */; };
 		9ABA5FB7223D7A2B00E135E1 /* PhotosDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5FB6223D7A2B00E135E1 /* PhotosDTO.swift */; };
 		9ABA5FBB223D7A5400E135E1 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5FB9223D7A5400E135E1 /* Photo.swift */; };
-		9ABA5FBC223D7A5400E135E1 /* PhotosDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5FBA223D7A5400E135E1 /* PhotosDetail.swift */; };
 		9ABA5FBF223D7A7A00E135E1 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5FBE223D7A7A00E135E1 /* CellModel.swift */; };
 		9ABA5FC6223DB80D00E135E1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5FC5223DB80D00E135E1 /* DetailViewController.swift */; };
 		9ABA5FC8223DB95300E135E1 /* DetailModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5FC7223DB95300E135E1 /* DetailModule.swift */; };
 		9ABA5FCA223DBC1B00E135E1 /* Assignment.md in Resources */ = {isa = PBXBuildFile; fileRef = 9ABA5FC9223DBC1B00E135E1 /* Assignment.md */; };
 		9ABA5FCC223DBECE00E135E1 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5FCB223DBECE00E135E1 /* DetailPresenter.swift */; };
-		9ABA5FCE223DBEE400E135E1 /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5FCD223DBEE400E135E1 /* DetailInteractor.swift */; };
-		9ABA5FD0223DBEF500E135E1 /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5FCF223DBEF500E135E1 /* DetailRouter.swift */; };
 		9ABA5FD2223DBF2B00E135E1 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5FD1223DBF2B00E135E1 /* DetailViewModel.swift */; };
 		9ABA5FD5223DC5E100E135E1 /* ListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5FD4223DC5E100E135E1 /* ListInteractorTests.swift */; };
 /* End PBXBuildFile section */
@@ -69,6 +68,9 @@
 		578C70C6223DF5E200DA4C18 /* UIStoryboard+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+.swift"; sourceTree = "<group>"; };
 		578C70C8223E0FB500DA4C18 /* Dispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dispatcher.swift; sourceTree = "<group>"; };
 		578C70CA223E146F00DA4C18 /* EmptyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyRequest.swift; sourceTree = "<group>"; };
+		578C70CC223E229600DA4C18 /* RestRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestRequest.swift; sourceTree = "<group>"; };
+		578C70CE223E229E00DA4C18 /* RestResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestResponse.swift; sourceTree = "<group>"; };
+		578C70D0223E22B300DA4C18 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		5B4CC31221A97A695A605603 /* Pods-NTSAssignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTSAssignment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NTSAssignment/Pods-NTSAssignment.debug.xcconfig"; sourceTree = "<group>"; };
 		9ABA5F5F223BEFB500E135E1 /* NTSAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NTSAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ABA5F62223BEFB500E135E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,9 +84,8 @@
 		9ABA5F84223D787800E135E1 /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		9ABA5F86223D787800E135E1 /* ResponseInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseInterceptor.swift; sourceTree = "<group>"; };
 		9ABA5F87223D787800E135E1 /* Serializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serializer.swift; sourceTree = "<group>"; };
-		9ABA5F89223D787800E135E1 /* URLRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
+		9ABA5F89223D787800E135E1 /* RestURLRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestURLRequestBuilder.swift; sourceTree = "<group>"; };
 		9ABA5F8A223D787800E135E1 /* RestApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestApi.swift; sourceTree = "<group>"; };
-		9ABA5F8B223D787800E135E1 /* RestCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestCore.swift; sourceTree = "<group>"; };
 		9ABA5F8C223D787800E135E1 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		9ABA5F95223D792300E135E1 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		9ABA5F96223D792300E135E1 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
@@ -101,14 +102,11 @@
 		9ABA5FB2223D79FA00E135E1 /* PhotosListService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosListService.swift; sourceTree = "<group>"; };
 		9ABA5FB6223D7A2B00E135E1 /* PhotosDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosDTO.swift; sourceTree = "<group>"; };
 		9ABA5FB9223D7A5400E135E1 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
-		9ABA5FBA223D7A5400E135E1 /* PhotosDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosDetail.swift; sourceTree = "<group>"; };
 		9ABA5FBE223D7A7A00E135E1 /* CellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 		9ABA5FC5223DB80D00E135E1 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9ABA5FC7223DB95300E135E1 /* DetailModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModule.swift; sourceTree = "<group>"; };
 		9ABA5FC9223DBC1B00E135E1 /* Assignment.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Assignment.md; sourceTree = "<group>"; };
 		9ABA5FCB223DBECE00E135E1 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
-		9ABA5FCD223DBEE400E135E1 /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
-		9ABA5FCF223DBEF500E135E1 /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
 		9ABA5FD1223DBF2B00E135E1 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		9ABA5FD4223DC5E100E135E1 /* ListInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListInteractorTests.swift; sourceTree = "<group>"; };
 		F339A8058EBF0D2B4F6F77E2 /* Pods-NTSAssignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTSAssignment.release.xcconfig"; path = "Pods/Target Support Files/Pods-NTSAssignment/Pods-NTSAssignment.release.xcconfig"; sourceTree = "<group>"; };
@@ -193,7 +191,6 @@
 				9ABA5F6B223BEFB700E135E1 /* LaunchScreen.storyboard */,
 				9ABA5F6E223BEFB700E135E1 /* Info.plist */,
 				9ABA5F99223D799700E135E1 /* Screen */,
-				578C70C5223DF5D000DA4C18 /* Utis */,
 				9ABA5FAF223D79FA00E135E1 /* Service */,
 				9ABA5F82223D787800E135E1 /* Network */,
 			);
@@ -233,7 +230,6 @@
 			isa = PBXGroup;
 			children = (
 				9ABA5F86223D787800E135E1 /* ResponseInterceptor.swift */,
-				9ABA5F87223D787800E135E1 /* Serializer.swift */,
 			);
 			path = Interceptors;
 			sourceTree = "<group>";
@@ -241,11 +237,11 @@
 		9ABA5F88223D787800E135E1 /* Rest */ = {
 			isa = PBXGroup;
 			children = (
-				9ABA5F89223D787800E135E1 /* URLRequestBuilder.swift */,
 				9ABA5F8A223D787800E135E1 /* RestApi.swift */,
-				9ABA5F8B223D787800E135E1 /* RestCore.swift */,
+				578C70CC223E229600DA4C18 /* RestRequest.swift */,
+				578C70CE223E229E00DA4C18 /* RestResponse.swift */,
 				9ABA5F8C223D787800E135E1 /* Endpoint.swift */,
-				578C70C8223E0FB500DA4C18 /* Dispatcher.swift */,
+				9ABA5F89223D787800E135E1 /* RestURLRequestBuilder.swift */,
 			);
 			path = Rest;
 			sourceTree = "<group>";
@@ -253,8 +249,11 @@
 		9ABA5F94223D792300E135E1 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				9ABA5F95223D792300E135E1 /* Result.swift */,
+				578C70C8223E0FB500DA4C18 /* Dispatcher.swift */,
 				9ABA5F96223D792300E135E1 /* JSON.swift */,
+				9ABA5F95223D792300E135E1 /* Result.swift */,
+				9ABA5F87223D787800E135E1 /* Serializer.swift */,
+				578C70D0223E22B300DA4C18 /* Errors.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -264,6 +263,7 @@
 			children = (
 				9ABA5F9C223D799700E135E1 /* List */,
 				9ABA5F9A223D799700E135E1 /* ListDetail */,
+				578C70C5223DF5D000DA4C18 /* Utis */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -274,9 +274,7 @@
 				9ABA5FC7223DB95300E135E1 /* DetailModule.swift */,
 				9ABA5F9B223D799700E135E1 /* ListDetailBuilder.swift */,
 				9ABA5FC4223DB80D00E135E1 /* View */,
-				9ABA5FCD223DBEE400E135E1 /* DetailInteractor.swift */,
 				9ABA5FCB223DBECE00E135E1 /* DetailPresenter.swift */,
-				9ABA5FCF223DBEF500E135E1 /* DetailRouter.swift */,
 			);
 			path = ListDetail;
 			sourceTree = "<group>";
@@ -310,7 +308,6 @@
 				9ABA5FB8223D7A5400E135E1 /* Domain */,
 				9ABA5FB5223D7A2B00E135E1 /* DTO */,
 				9ABA5FB0223D79FA00E135E1 /* Photos */,
-				9ABA5FB2223D79FA00E135E1 /* PhotosListService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -318,6 +315,7 @@
 		9ABA5FB0223D79FA00E135E1 /* Photos */ = {
 			isa = PBXGroup;
 			children = (
+				9ABA5FB2223D79FA00E135E1 /* PhotosListService.swift */,
 				9ABA5FB1223D79FA00E135E1 /* PhotosMapper.swift */,
 			);
 			path = Photos;
@@ -336,7 +334,6 @@
 			isa = PBXGroup;
 			children = (
 				9ABA5FB9223D7A5400E135E1 /* Photo.swift */,
-				9ABA5FBA223D7A5400E135E1 /* PhotosDetail.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -533,7 +530,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				578C70C7223DF5E200DA4C18 /* UIStoryboard+.swift in Sources */,
-				9ABA5F92223D787800E135E1 /* RestCore.swift in Sources */,
 				9ABA5FBB223D7A5400E135E1 /* Photo.swift in Sources */,
 				9ABA5FB4223D79FA00E135E1 /* PhotosListService.swift in Sources */,
 				9ABA5F98223D792300E135E1 /* JSON.swift in Sources */,
@@ -543,19 +539,19 @@
 				9ABA5FA6223D799700E135E1 /* ListDetailBuilder.swift in Sources */,
 				578C70CB223E146F00DA4C18 /* EmptyRequest.swift in Sources */,
 				9ABA5FC8223DB95300E135E1 /* DetailModule.swift in Sources */,
-				9ABA5FCE223DBEE400E135E1 /* DetailInteractor.swift in Sources */,
 				9ABA5F63223BEFB500E135E1 /* AppDelegate.swift in Sources */,
 				9ABA5F8E223D787800E135E1 /* ResponseInterceptor.swift in Sources */,
 				9ABA5F91223D787800E135E1 /* RestApi.swift in Sources */,
 				9ABA5FD2223DBF2B00E135E1 /* DetailViewModel.swift in Sources */,
+				578C70D1223E22B300DA4C18 /* Errors.swift in Sources */,
 				9ABA5FAE223D799700E135E1 /* ListRouter.swift in Sources */,
-				9ABA5FBC223D7A5400E135E1 /* PhotosDetail.swift in Sources */,
-				9ABA5FD0223DBEF500E135E1 /* DetailRouter.swift in Sources */,
 				9ABA5FC6223DB80D00E135E1 /* DetailViewController.swift in Sources */,
 				9ABA5F97223D792300E135E1 /* Result.swift in Sources */,
 				9ABA5FAC223D799700E135E1 /* ListCellModel.swift in Sources */,
+				578C70CD223E229700DA4C18 /* RestRequest.swift in Sources */,
 				9ABA5F8D223D787800E135E1 /* NetworkClient.swift in Sources */,
 				9ABA5FA8223D799700E135E1 /* ListInteractor.swift in Sources */,
+				578C70CF223E229E00DA4C18 /* RestResponse.swift in Sources */,
 				9ABA5FCC223DBECE00E135E1 /* DetailPresenter.swift in Sources */,
 				9ABA5FAB223D799700E135E1 /* ListCell.swift in Sources */,
 				9ABA5F8F223D787800E135E1 /* Serializer.swift in Sources */,
@@ -565,7 +561,7 @@
 				578C70C9223E0FB500DA4C18 /* Dispatcher.swift in Sources */,
 				9ABA5FBF223D7A7A00E135E1 /* CellModel.swift in Sources */,
 				9ABA5FAA223D799700E135E1 /* ListViewController.swift in Sources */,
-				9ABA5F90223D787800E135E1 /* URLRequestBuilder.swift in Sources */,
+				9ABA5F90223D787800E135E1 /* RestURLRequestBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

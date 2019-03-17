@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct URLRequestBuilder {
+struct RestURLRequestBuilder {
 
     let request: RestRequest
 

@@ -100,7 +100,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jg8-lY-xVP">
-                                <rect key="frame" x="16" y="429" width="52.333333333333343" height="26.333333333333314"/>
+                                <rect key="frame" x="16.000000000000004" y="429" width="52.333333333333343" height="26.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -109,10 +109,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3yX-e1-6xw" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jg8-lY-xVP" secondAttribute="trailing" constant="16" id="4ck-c2-Xw8"/>
-                            <constraint firstItem="dT9-S7-LAV" firstAttribute="width" secondItem="Yy2-2x-a80" secondAttribute="width" id="HCm-fs-7se"/>
                             <constraint firstItem="3yX-e1-6xw" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="jg8-lY-xVP" secondAttribute="bottom" constant="10" id="NMS-m1-PPB"/>
                             <constraint firstItem="dT9-S7-LAV" firstAttribute="top" secondItem="3yX-e1-6xw" secondAttribute="top" id="QN4-E2-ocd"/>
-                            <constraint firstItem="dT9-S7-LAV" firstAttribute="centerX" secondItem="Yy2-2x-a80" secondAttribute="centerX" id="ghO-Vr-jwg"/>
+                            <constraint firstAttribute="trailing" secondItem="dT9-S7-LAV" secondAttribute="trailing" id="QaU-zP-SHX"/>
+                            <constraint firstItem="dT9-S7-LAV" firstAttribute="leading" secondItem="Yy2-2x-a80" secondAttribute="leading" id="mtF-df-YN6"/>
                             <constraint firstItem="jg8-lY-xVP" firstAttribute="leading" secondItem="3yX-e1-6xw" secondAttribute="leading" constant="16" id="pwL-KZ-Bcs"/>
                             <constraint firstItem="jg8-lY-xVP" firstAttribute="top" secondItem="dT9-S7-LAV" secondAttribute="bottom" constant="10" id="qk4-iw-iXw"/>
                         </constraints>

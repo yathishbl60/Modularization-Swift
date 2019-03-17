@@ -21,7 +21,7 @@ final class RestApiImpl: RestApi {
     }
     
     func execute(request: RestRequest, completion: @escaping (RestResponse) -> Void) {
-        let httpRequest = URLRequestBuilder(request: request).build()
+        let httpRequest = RestURLRequestBuilder(request: request).build()
         let task = session.dataTask(with: httpRequest) { (data, response, error) in
             let code = (response as? HTTPURLResponse)?.statusCode ?? 0
             if let error = error {
