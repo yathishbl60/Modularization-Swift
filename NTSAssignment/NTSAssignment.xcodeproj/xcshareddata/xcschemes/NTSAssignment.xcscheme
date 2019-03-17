@@ -40,27 +40,9 @@
       </CodeCoverageTargets>
       <Testables>
          <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9ABA5F72223BEFB700E135E1"
-               BuildableName = "NTSAssignmentTests.xctest"
-               BlueprintName = "NTSAssignmentTests"
-               ReferencedContainer = "container:NTSAssignment.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9ABA5FE4223E3C5E00E135E1"
-               BuildableName = "NetworkTests.xctest"
-               BlueprintName = "NetworkTests"
-               ReferencedContainer = "container:NTSAssignment.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
+            skipped = "NO"
+            parallelizable = "YES"
+            testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9ABA6007223E3DDB00E135E1"
@@ -70,7 +52,9 @@
             </BuildableReference>
          </TestableReference>
          <TestableReference
-            skipped = "NO">
+            skipped = "NO"
+            parallelizable = "YES"
+            testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5741D52C223E42AD00926059"
