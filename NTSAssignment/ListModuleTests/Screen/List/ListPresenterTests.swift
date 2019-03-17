@@ -22,7 +22,57 @@ final class ListPresenterTests: XCTestCase {
         
         presenter = ListPresenter()
         router = MockRouter()
-//        router.display(photo: <#T##Photo#>)
+        view = MockView()
+        interactor = MockInteractor()
+
+        presenter.view = view
+        presenter.router = router
+        presenter.interactor = interactor
+    }
+
+    override func tearDown() {
+        presenter = nil
+        router = nil
+        view = nil
+        interactor = nil
+
+        super.tearDown()
+    }
+
+    func testViewIsReady() {
+
+    }
+
+    func testDidSelectItem() {
+
+    }
+
+    func testDidPullToRefresh() {
+
+    }
+
+    func testDidScrollToBottomWhenAlreadyLoading() {
+
+    }
+
+    func testDidScrollToBottomWhenNotLoading() {
+
+    }
+
+    func testDidScrollToBottomWhenAllItemsLoaded() {
+
+    }
+
+    func testDidLoadPhotos() {
+
+    }
+
+    func testDidLoadMorePhotos() {
+
+    }
+
+    func testDidFailToLoadPhotos() {
+
     }
     
 }
