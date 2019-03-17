@@ -11,17 +11,20 @@ import Foundation
 final class ListInteractor {
     weak var output: ListViewInteractorOutput?
     let service: PhotosListService
-    var request: PhotosListRequestParams!
+    private var request: PhotosListRequestParams
+    private let firstPageRequest = PhotosListRequestParams(page: 0, limit: 10)
     
     init(service: PhotosListService) {
         self.service = service
+        request = firstPageRequest
     }
 
     func performRequest() {
+        let currentRequest = request
         service.fetchPhotos(request: request) { [weak self] response in
             switch response {
             case .success(let photos):
-                if let page = self?.request.page, page > 0 {
+                if currentRequest.page > 0 {
                     self?.output?.didLoadMore(photos: photos)
                 } else {
                     self?.output?.didLoad(photos: photos)
@@ -36,12 +39,12 @@ final class ListInteractor {
 extension ListInteractor: ListViewInteractorInput {
 
     func loadPhotos() {
-        request = PhotosListRequestParams(page: 0, limit: 10) //load start page!
+        request = firstPageRequest //load start page!
         performRequest()
     }
 
     func loadMorePhotos() {
-        request = PhotosListRequestParams(page: request.page+1, limit: request.limit) //load next page!
+        request = PhotosListRequestParams(page: request.page + 1, limit: request.limit) //load next page!
         performRequest()
     }
 }

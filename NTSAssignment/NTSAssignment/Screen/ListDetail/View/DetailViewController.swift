@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DetailViewController: UIViewController {
+final class DetailViewController: UIViewController, StoryboardIdentifiable {
 
     var output: DetailViewOutput?
 
@@ -18,7 +18,7 @@ final class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        detailImageView.sd_imageTransition = .fade
         output?.viewDidLoad()
     }
 }

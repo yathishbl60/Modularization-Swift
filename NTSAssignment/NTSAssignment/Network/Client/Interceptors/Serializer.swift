@@ -9,12 +9,12 @@
 import Foundation
 
 protocol Serializer {
-    func map<T: Decodable>(response: Response) throws -> T
+    func map<T: Decodable>(response: RestResponse) throws -> T
 }
 
 struct JsonSerializer: Serializer {
 
-    func map<T: Decodable>(response: Response) throws -> T {
+    func map<T: Decodable>(response: RestResponse) throws -> T {
         do {
             let data = try JSONSerialization.data(withJSONObject: response.body, options: .prettyPrinted)
             return try JSONDecoder().decode(T.self, from: data)

@@ -12,18 +12,20 @@ final class DetailPresenter {
     weak var view: DetailViewInput?
     var interactor: DetailViewInteractorInput?
     var router: DetailRouterInput?
-    var photoData: Photos?
+
+    let photo: Photo
+
+    init(photo: Photo) {
+        self.photo = photo
+    }
 }
 
 extension DetailPresenter: DetailViewOutput {
     
     func viewDidLoad() {
         view?.display(title: "Photo Detail")
-        if let imageUrl = photoData?.url {
-            view?.display(image: imageUrl)
-        }
-        if let detailText = photoData?.title {
-            view?.displayText(text: detailText)
-        }
+        view?.display(image: photo.url)
+        view?.displayText(text: photo.title)
     }
+
 }

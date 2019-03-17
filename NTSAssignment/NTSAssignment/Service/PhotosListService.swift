@@ -9,7 +9,7 @@
 import Foundation
 
 protocol PhotosListService {
-    func fetchPhotos(request: PhotosListRequestParams, completion: @escaping (Result<[Photos]>) -> Void)
+    func fetchPhotos(request: PhotosListRequestParams, completion: @escaping (Result<[Photo]>) -> Void)
 }
 
 struct PhotosListRequestParams: Equatable {
@@ -28,7 +28,7 @@ final class PhotosServiceIml: PhotosListService {
         self.mapper = mapper
     }
 
-    func fetchPhotos(request: PhotosListRequestParams, completion: @escaping (Result<[Photos]>) -> Void) {
+    func fetchPhotos(request: PhotosListRequestParams, completion: @escaping (Result<[Photo]>) -> Void) {
         let urlBuilder = URLBuilder(
             path: URL(string: "https://jsonplaceholder.typicode.com/photos")!,
             urlParams: ["_limit" : String(request.limit), "_page": String(request.page)]
@@ -36,7 +36,7 @@ final class PhotosServiceIml: PhotosListService {
         let endpoint = PhotosEndpoint(url :urlBuilder.build())
         client.request(endpoint: endpoint,
                        params: EmptyRequest(),
-                       mapOutput: { [mapper] (dto: [PhotosDTO]) -> [Photos] in
+                       mapOutput: { [mapper] (dto: [PhotosDTO]) -> [Photo] in
                         return mapper.map(input: dto) },
                        completion: completion)
     }

@@ -15,7 +15,3 @@ struct PhotosDTO: Codable {
     let url: URL
     let thumbnailUrl: URL
 }
-
-struct EmptyRequest: Codable {
-
-}

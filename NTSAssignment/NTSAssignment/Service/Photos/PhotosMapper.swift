@@ -9,14 +9,14 @@
 import Foundation
 
 protocol PhotosMapper {
-    func map(input: [PhotosDTO]) -> [Photos]
+    func map(input: [PhotosDTO]) -> [Photo]
 }
 
 struct PhotosMapperImpl: PhotosMapper {
 
-    func map(input: [PhotosDTO]) -> [Photos] {
+    func map(input: [PhotosDTO]) -> [Photo] {
         return input.map {
-            Photos(id: $0.id, albumId: $0.albumId, title: $0.title, url: $0.url, thumbnailUrl: $0.thumbnailUrl)
+            Photo(id: $0.id, albumId: $0.albumId, title: $0.title, url: $0.url, thumbnailUrl: $0.thumbnailUrl)
         }
     }
 

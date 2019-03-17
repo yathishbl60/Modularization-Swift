@@ -14,7 +14,7 @@ protocol ListViewInput: class {
     func display(cells: [CellModel])
     func displayMore(cells: [CellModel])
     func display(title: String)
-    var isLoading:Bool {get set}
+    var isLoading: Bool { get set }
     func endPullRefreshing()
     func displayError(message: String)
 }
@@ -23,11 +23,11 @@ protocol ListViewOutput {
     func viewDidLoad()
     func didSelect(indexPath: IndexPath)
     func didPullRefresh()
-    func didScroll()
+    func didScrollToBottom()
 }
 
 protocol ListRouterInput: class {
-    func display(photos: Photos)
+    func display(photo: Photo)
 }
 
 protocol ListViewInteractorInput {
@@ -36,8 +36,8 @@ protocol ListViewInteractorInput {
 }
 
 protocol ListViewInteractorOutput: class {
-    func didLoad(photos: [Photos])
-    func didLoadMore(photos: [Photos])
+    func didLoad(photos: [Photo])
+    func didLoadMore(photos: [Photo])
     func didFailToLoadPhotos(error: Error)
 }
 

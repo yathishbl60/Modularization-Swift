@@ -9,12 +9,12 @@
 import Foundation
 
 protocol ResponseInterceptor {
-    mutating func intercept(response: Response) throws -> Response
+    mutating func intercept(response: RestResponse) throws -> RestResponse
 }
 
 struct StatusCodeCheckInterceptor: ResponseInterceptor {
 
-    func intercept(response: Response) throws -> Response {
+    func intercept(response: RestResponse) throws -> RestResponse {
         switch response.statusCode {
         case 100...200:
             return response

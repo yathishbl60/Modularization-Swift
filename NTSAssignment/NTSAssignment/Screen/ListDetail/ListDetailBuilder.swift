@@ -9,11 +9,12 @@
 import UIKit
 
 struct ListDetailBuilder {
-    func buildWithPhotoData(_ photo: Photos) -> DetailViewModule? {
-        guard let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else { return nil }
+    let photo: Photo
+
+    func build() -> DetailViewModule {
+        let viewController: DetailViewController = UIStoryboard(storyboard: .Main).instantiateViewController()
         
-        let presenter = DetailPresenter()
-        presenter.photoData = photo //passing data!
+        let presenter = DetailPresenter(photo: photo)
         presenter.view = viewController
         viewController.output = presenter
         

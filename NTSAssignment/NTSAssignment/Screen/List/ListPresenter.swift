@@ -12,78 +12,71 @@ final class ListPresenter {
     weak var view: ListViewInput?
     var interactor: ListViewInteractorInput?
     var router: ListRouterInput?
-
-    private var photos: [Photos] = []
+    private var photos: [Photo] = []
+    private var loadedAllPhotos = false
 }
 
 extension ListPresenter: ListViewOutput {
 
     func viewDidLoad() {
-        view?.display(title: "Photos List")
+        view?.display(title: "Photos")
         view?.isLoading = true
         interactor?.loadPhotos()
     }
 
     func didSelect(indexPath: IndexPath) {
-        if indexPath.row < photos.count {
-            let photo = photos[indexPath.row]
-            router?.display(photos: photo)
-        }
+        let photo = photos[indexPath.row]
+        router?.display(photo: photo)
     }
 
     func didPullRefresh() {
+        loadedAllPhotos = false
         view?.isLoading = true
         interactor?.loadPhotos()
     }
     
-    func didScroll() {
-        if let isLoading = view?.isLoading, !isLoading {
-            view?.isLoading = true
-            interactor?.loadMorePhotos()
-        }
+    func didScrollToBottom() {
+        view?.isLoading = !loadedAllPhotos
+        interactor?.loadMorePhotos()
     }
 }
 
 extension ListPresenter: ListViewInteractorOutput {
     
-    func didLoad(photos: [Photos]) {
-        DispatchQueue.main.async {
-            self.photos = photos
-            self.view?.isLoading = false
-            self.view?.endPullRefreshing()
-            self.view?.display(cells: self.map(photos: photos))
-        }
+    func didLoad(photos: [Photo]) {
+        loadedAllPhotos = photos.isEmpty
+        self.photos = photos
+        view?.isLoading = !loadedAllPhotos
+        view?.endPullRefreshing()
+        view?.display(cells: map(photos: photos))
     }
 
-    func didLoadMore(photos: [Photos]) {
-        DispatchQueue.main.async {
-            self.photos += photos
-            self.view?.isLoading = false
-            self.view?.endPullRefreshing()
-            self.view?.displayMore(cells: self.map(photos: photos))
-        }
+    func didLoadMore(photos: [Photo]) {
+        loadedAllPhotos = photos.isEmpty
+        self.photos += photos
+        view?.isLoading = !loadedAllPhotos
+        view?.endPullRefreshing()
+        view?.displayMore(cells: map(photos: photos))
     }
-    
+
     func didFailToLoadPhotos(error: Error) {
-        DispatchQueue.main.async {
-            self.view?.isLoading = false
-            self.view?.endPullRefreshing()
-            self.view?.displayError(message: self.map(error: error))
-        }
+        view?.isLoading = false
+        view?.endPullRefreshing()
+        view?.displayError(message: map(error: error))
     }
 
 }
 
 private extension ListPresenter {
 
-    func map(photos: [Photos]) -> [CellModel] {
+    func map(photos: [Photo]) -> [CellModel] {
         return photos.map {
             ListCellModel(title: $0.title, url: $0.url, thumb: $0.thumbnailUrl)
         }
     }
 
     func map(error: Error) -> String {
-        return "please check!! error mapping data"
+        return "Something went wrong!!"
     }
 
 }

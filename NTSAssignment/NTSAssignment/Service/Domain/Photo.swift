@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Photos: Equatable {
+struct Photo: Equatable {
     let id: Int
     let albumId: Int
     let title: String

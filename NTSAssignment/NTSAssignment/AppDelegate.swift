@@ -6,23 +6,25 @@
 //  Copyright © 2019 Prajwal S. All rights reserved.
 //
 
+import SDWebImage
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+final class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    var window: UIWindow?
+    private var window: UIWindow?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Clear cache to show demo of animation at first time load
+        SDImageCache.shared().clearMemory()
+        SDImageCache.shared().clearDisk()
+
         window = UIWindow(frame: UIScreen.main.bounds)
-        if let viewController = ListBuilder().build() {
-            window?.rootViewController = UINavigationController(rootViewController: viewController)
-            window?.makeKeyAndVisible()
-        } else {
-            assertionFailure("Couldn't load Listview")
-        }
-        
+        let viewController = ListBuilder().build()
+        window?.rootViewController = UINavigationController(rootViewController: viewController)
+        window?.makeKeyAndVisible()
+
         return true
     }
     

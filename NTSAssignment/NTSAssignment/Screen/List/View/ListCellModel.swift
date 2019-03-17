@@ -8,10 +8,9 @@
 
 import Foundation
 
-//View Model
-
 struct ListCellModel: CellModel {
     static let cellId: String = String(describing: ListCell.self)
+
     let title: String
     let url: URL
     let thumb: URL

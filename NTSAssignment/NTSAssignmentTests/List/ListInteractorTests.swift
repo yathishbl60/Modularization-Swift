@@ -34,12 +34,12 @@ final class ListInteractorTests: XCTestCase {
 
     func testSuccess() {
         // given
-        let mockPhoto1 = Photos(id: 1,
+        let mockPhoto1 = Photo(id: 1,
                                 albumId: 12,
                                 title: "dfsdfsdf",
                                 url: URL(string:  "https://g.com/1")!,
                                 thumbnailUrl: URL(string:"https://gggt.com/1")!)
-        let mockPhoto2 = Photos(id: 2,
+        let mockPhoto2 = Photo(id: 2,
                                 albumId: 22,
                                 title: "dfervrrr",
                                 url: URL(string:"https://g.com/2")!,
@@ -75,22 +75,22 @@ private extension ListInteractorTests {
 
     final class SamplesServiceMock: PhotosListService {
         var request: PhotosListRequestParams?
-        var result: Result<[Photos]>!
-        func fetchPhotos(request: PhotosListRequestParams, completion: @escaping (Result<[Photos]>) -> Void) {
+        var result: Result<[Photo]>!
+        func fetchPhotos(request: PhotosListRequestParams, completion: @escaping (Result<[Photo]>) -> Void) {
             self.request = request
             completion(result)
         }
     }
 
     final class OutputMock: ListViewInteractorOutput {
-        var samples: [Photos]?
+        var samples: [Photo]?
         var error: Error?
         
-        func didLoad(photos: [Photos]) {
+        func didLoad(photos: [Photo]) {
             self.samples = photos
         }
         
-        func didLoadMore(photos: [Photos]) {
+        func didLoadMore(photos: [Photo]) {
             self.samples = photos
         }
         

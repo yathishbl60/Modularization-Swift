@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Request {
+struct RestRequest {
     var url: URL
     var method: Method
     var body: [String: Any]
@@ -20,14 +20,14 @@ struct Request {
     }
 }
 
-struct Response {
-    var request: Request
+struct RestResponse {
+    var request: RestRequest
 
     var statusCode: Int
     var body: JSON
     var error: Error?
 
-    init(request: Request, statusCode: Int, body: JSON = [:], error: Error? = nil) {
+    init(request: RestRequest, statusCode: Int, body: JSON = [:], error: Error? = nil) {
         self.request = request
         self.statusCode = statusCode
         self.body = body

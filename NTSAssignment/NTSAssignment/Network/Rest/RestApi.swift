@@ -9,7 +9,7 @@
 import Foundation
 
 protocol RestApi {
-    func execute(request: Request, completion: @escaping (Response)->Void)
+    func execute(request: RestRequest, completion: @escaping (RestResponse)->Void)
 }
 
 final class RestApiImpl: RestApi {
@@ -20,21 +20,21 @@ final class RestApiImpl: RestApi {
         self.session = session
     }
     
-    func execute(request: Request, completion: @escaping (Response) -> Void) {
+    func execute(request: RestRequest, completion: @escaping (RestResponse) -> Void) {
         let httpRequest = URLRequestBuilder(request: request).build()
         let task = session.dataTask(with: httpRequest) { (data, response, error) in
             let code = (response as? HTTPURLResponse)?.statusCode ?? 0
             if let error = error {
-                completion(Response(request: request, statusCode: code, error: error))
+                completion(RestResponse(request: request, statusCode: code, error: error))
             } else if let data = data {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    completion(Response(request: request, statusCode: code, body: json, error: error))
+                    completion(RestResponse(request: request, statusCode: code, body: json, error: error))
                 } catch {
-                    completion(Response(request: request, statusCode: code, error: ResponseError.unknown))
+                    completion(RestResponse(request: request, statusCode: code, error: ResponseError.unknown))
                 }
             } else {
-                completion(Response(request: request, statusCode: code, error: error))
+                completion(RestResponse(request: request, statusCode: code, error: error))
             }
         }
         task.resume()

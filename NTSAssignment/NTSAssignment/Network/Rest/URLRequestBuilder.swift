@@ -10,7 +10,7 @@ import Foundation
 
 struct URLRequestBuilder {
 
-    let request: Request
+    let request: RestRequest
 
     func build() -> URLRequest {
         var req = URLRequest(url: request.url)

@@ -10,8 +10,8 @@ import UIKit
 
 struct ListBuilder {
 
-    func build() -> ListViewModule? {
-        guard let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ListViewController") as? ListViewController else { return nil }
+    func build() -> ListViewModule {
+        let viewController: ListViewController = UIStoryboard(storyboard: .Main).instantiateViewController()
 
         let presenter = ListPresenter()
         presenter.view = viewController

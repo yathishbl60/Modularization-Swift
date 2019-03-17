@@ -14,13 +14,12 @@ final class ListRouter {
 
 extension ListRouter: ListRouterInput {
 
-    func display(photos: Photos) {
-        if let detailViewController = ListDetailBuilder().buildWithPhotoData(photos) as? DetailViewController {
-            viewController?.navigationController?.pushViewController(
-                detailViewController,
-                animated: true
-            )
-        }
+    func display(photo: Photo) {
+        let detailViewController = ListDetailBuilder(photo: photo).build()
+        viewController?.navigationController?.pushViewController(
+            detailViewController,
+            animated: true
+        )
     }
 
 }
