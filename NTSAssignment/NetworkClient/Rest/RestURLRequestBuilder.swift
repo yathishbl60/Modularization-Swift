@@ -26,9 +26,9 @@ struct RestURLRequestBuilder {
 public struct URLBuilder {
 
     public let path: URL
-    public let urlParams: [String: String]
+    public let urlParams: [(key: String, value: String)]
 
-    public init(path: URL, urlParams: [String: String]) {
+    public init(path: URL, urlParams: [(key: String, value: String)]) {
         self.path = path
         self.urlParams = urlParams
     }

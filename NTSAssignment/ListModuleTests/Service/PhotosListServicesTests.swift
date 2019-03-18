@@ -12,26 +12,65 @@ import XCTest
 
 final class PhotosListServicesTests: XCTestCase {
     
-    func testPhotosServicesRequest() {
+    func testFetchPhotosReturnSuccess() {
         // given
-        let photoServiceImpl: PhotosServiceIml = PhotosServiceIml(client: NetworkClientBuilder().build())
-        let expectation = self.expectation(description: "fetchPhotos")
-        let request = PhotosListRequestParams(page: 0, limit: 10)
-        var photosData: [Photo] = []
-        // when
-        photoServiceImpl.fetchPhotos(request: request) { response in
-            switch response {
-            case .success(let photos):
-                photosData = photos
-            case .failure(_): break
-            }
-            XCTAssertTrue(response.error == nil)
-            expectation.fulfill()
-        }
+        let photos = [
+            Photo(
+                id: 1,
+                albumId: 1,
+                title: "abc",
+                url: URL(string: "http://xyz.com")!,
+                thumbnailUrl:  URL(string: "http://ysdf.com")!
+            ),
+            Photo(
+                id: 2,
+                albumId: 2,
+                title: "abcd",
+                url: URL(string: "http://abc.com")!,
+                thumbnailUrl:  URL(string: "http://dcfd.com")!
+            )
+        ]
         
-        // then
-        waitForExpectations(timeout: 10, handler: nil)
-        XCTAssertEqual(photosData.count, 10)
+        let mockClient = MockClient()
+        mockClient.result = .success(photos)
+        
+        let mockMapper = PhotosMapperImpl()
+
+        let request = PhotosListRequestParams(page: 2, limit: 10)
+        let photoService = PhotosServiceIml(client: mockClient,
+                                            mapper: mockMapper)
+        
+        // when, then
+        photoService.fetchPhotos(request: request) { result in
+            switch result {
+            case .success(let response):
+                XCTAssertEqual(response, photos)
+            
+            case .failure:
+                XCTFail("Must not fail")
+            }
+        }
+
+        let endPoint = PhotosEndpoint(url: URL(string: "https://jsonplaceholder.typicode.com/photos?_limit=10&_page=2")!)
+        XCTAssertEqual(mockClient.endpoint as! PhotosEndpoint, endPoint)
     }
     
 }
+
+private extension PhotosListServicesTests {
+    
+    final class MockClient : NetworkClient {
+        
+        var endpoint: Endpoint? = nil
+        var params: PhotosListRequestParams? = nil
+        var result: Result<[Photo]>? = nil
+        
+        func request<Params, DTO, Model>(endpoint: Endpoint, params: Params, mapOutput: @escaping (DTO) throws -> Model, completion: @escaping (Result<Model>) -> Void) where Params : Encodable, DTO : Decodable {
+            self.endpoint = endpoint
+            self.params = params as? PhotosListRequestParams
+            completion(result as! Result<Model>)
+        }
+    }
+    
+}
+
