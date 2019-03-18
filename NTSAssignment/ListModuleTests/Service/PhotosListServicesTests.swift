@@ -64,9 +64,11 @@ private extension PhotosListServicesTests {
         var endpoint: Endpoint? = nil
         var params: PhotosListRequestParams? = nil
         var result: Result<[Photo]>? = nil
-        
+        var photosMapper: PhotosMapper? = nil
+
         func request<Params, DTO, Model>(endpoint: Endpoint, params: Params, mapOutput: @escaping (DTO) throws -> Model, completion: @escaping (Result<Model>) -> Void) where Params : Encodable, DTO : Decodable {
             self.endpoint = endpoint
+            self.photosMapper = mapOutput as? PhotosMapper
             self.params = params as? PhotosListRequestParams
             completion(result as! Result<Model>)
         }

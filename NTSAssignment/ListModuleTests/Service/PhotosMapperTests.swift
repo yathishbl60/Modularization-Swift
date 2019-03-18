@@ -7,27 +7,35 @@
 //
 
 import XCTest
+@testable import ListModule
 
 class PhotosMapperTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testPhotosMapper() {
+        // given
+        let photosMapper = PhotosMapperImpl()
+        let photosDTO = [
+            PhotosDTO(
+                id: 1,
+                albumId: 1,
+                title: "abc",
+                url: URL(string: "https://abc.com")!,
+                thumbnailUrl: URL(string: "https://xyz.com")!)
+        ]
+        let photos = [
+            Photo(
+                id: 1,
+                albumId: 1,
+                title: "abc",
+                url: URL(string: "https://abc.com")!,
+                thumbnailUrl: URL(string: "https://xyz.com")!)
+        ]
+        
+        // when
+        let photosMap = photosMapper.map(input: photosDTO)
+        
+        // then
+        XCTAssertEqual(photosMap, photos)
     }
 
 }

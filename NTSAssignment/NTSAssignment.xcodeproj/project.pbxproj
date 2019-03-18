@@ -57,11 +57,12 @@
 		9ABA5F63223BEFB500E135E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA5F62223BEFB500E135E1 /* AppDelegate.swift */; };
 		9ABA5F6A223BEFB700E135E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ABA5F69223BEFB700E135E1 /* Assets.xcassets */; };
 		9ABA5F6D223BEFB700E135E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ABA5F6B223BEFB700E135E1 /* LaunchScreen.storyboard */; };
-		9ABA5FCA223DBC1B00E135E1 /* Assignment.md in Resources */ = {isa = PBXBuildFile; fileRef = 9ABA5FC9223DBC1B00E135E1 /* Assignment.md */; };
 		9ABA6009223E3DDC00E135E1 /* NetworkClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ABA6000223E3DDB00E135E1 /* NetworkClient.framework */; };
 		9ABA6010223E3DDC00E135E1 /* NetworkClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA600F223E3DDC00E135E1 /* NetworkClientTests.swift */; };
 		9ABA6015223E3DDC00E135E1 /* NetworkClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ABA6000223E3DDB00E135E1 /* NetworkClient.framework */; };
 		9ABA6016223E3DDC00E135E1 /* NetworkClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9ABA6000223E3DDB00E135E1 /* NetworkClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9AE659B5224023C10005A249 /* Documentation.md in Resources */ = {isa = PBXBuildFile; fileRef = 9AE659B3224023C10005A249 /* Documentation.md */; };
+		9AE659B6224023C10005A249 /* Requirements.md in Resources */ = {isa = PBXBuildFile; fileRef = 9AE659B4224023C10005A249 /* Requirements.md */; };
 		EC98D77D50B24BBEE36FA923 /* Pods_NTSAssignment_ListModuleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F12ED2607A6896C12A9718CA /* Pods_NTSAssignment_ListModuleTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -190,7 +191,6 @@
 		9ABA5FBE223D7A7A00E135E1 /* CellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 		9ABA5FC5223DB80D00E135E1 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9ABA5FC7223DB95300E135E1 /* DetailModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModule.swift; sourceTree = "<group>"; };
-		9ABA5FC9223DBC1B00E135E1 /* Assignment.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Assignment.md; sourceTree = "<group>"; };
 		9ABA5FCB223DBECE00E135E1 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		9ABA5FD1223DBF2B00E135E1 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		9ABA6000223E3DDB00E135E1 /* NetworkClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,6 +198,8 @@
 		9ABA600F223E3DDC00E135E1 /* NetworkClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientTests.swift; sourceTree = "<group>"; };
 		9ABA6011223E3DDC00E135E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9ABA601D223E3E3D00E135E1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AE659B3224023C10005A249 /* Documentation.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Documentation.md; sourceTree = "<group>"; };
+		9AE659B4224023C10005A249 /* Requirements.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Requirements.md; sourceTree = "<group>"; };
 		A0D5F0A58FA070D58650B645 /* Pods_NTSAssignment_ListModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NTSAssignment_ListModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2E6279C094DBE5DE81A3D75 /* Pods-NTSAssignment-ListModule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTSAssignment-ListModule.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NTSAssignment-ListModule/Pods-NTSAssignment-ListModule.debug.xcconfig"; sourceTree = "<group>"; };
 		D909ED97277E58A0CC7B3661 /* Pods-NTSAssignment-ListModule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NTSAssignment-ListModule.release.xcconfig"; path = "Pods/Target Support Files/Pods-NTSAssignment-ListModule/Pods-NTSAssignment-ListModule.release.xcconfig"; sourceTree = "<group>"; };
@@ -364,13 +366,14 @@
 		9ABA5F56223BEFB500E135E1 = {
 			isa = PBXGroup;
 			children = (
-				9ABA5FC9223DBC1B00E135E1 /* Assignment.md */,
+				9AE659B3224023C10005A249 /* Documentation.md */,
+				9AE659B4224023C10005A249 /* Requirements.md */,
 				9ABA5F61223BEFB500E135E1 /* NTSAssignment */,
 				9ABA5F76223BEFB700E135E1 /* NTSAssignmentTests */,
-				9ABA6001223E3DDB00E135E1 /* NetworkClient */,
-				9ABA600E223E3DDC00E135E1 /* NetworkClientTests */,
 				5741D526223E42AD00926059 /* ListModule */,
 				5741D533223E42AD00926059 /* ListModuleTests */,
+				9ABA6001223E3DDB00E135E1 /* NetworkClient */,
+				9ABA600E223E3DDC00E135E1 /* NetworkClientTests */,
 				9ABA5F60223BEFB500E135E1 /* Products */,
 				9A9396F8161F1A0D38C165AB /* Pods */,
 				7269E9C5B212264A5D488FAA /* Frameworks */,
@@ -771,8 +774,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AE659B5224023C10005A249 /* Documentation.md in Resources */,
 				9ABA5F6D223BEFB700E135E1 /* LaunchScreen.storyboard in Resources */,
-				9ABA5FCA223DBC1B00E135E1 /* Assignment.md in Resources */,
+				9AE659B6224023C10005A249 /* Requirements.md in Resources */,
 				9ABA5F6A223BEFB700E135E1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
