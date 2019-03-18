@@ -9,7 +9,7 @@
 import Foundation
 import NetworkClient
 
-protocol PhotosListService {
+protocol PhotosListService : class {
     func fetchPhotos(request: PhotosListRequestParams, completion: @escaping (Result<[Photo]>) -> Void)
 }
 

@@ -13,6 +13,7 @@ import XCTest
 final class ListRouterTests: XCTestCase {
 
     func testDisplayDetail() {
+        // given
         let router = ListRouter()
         let viewController = MockViewController()
         router.viewController = viewController
@@ -25,8 +26,10 @@ final class ListRouterTests: XCTestCase {
             thumbnailUrl:  URL(string: "http://y.com")!
         )
 
+        // when
         router.display(photo: photo)
 
+        // then
         XCTAssertTrue(viewController.mackNavigationController.animated!)
         XCTAssertNotNil(viewController.mackNavigationController.viewControllerToPush)
     }
