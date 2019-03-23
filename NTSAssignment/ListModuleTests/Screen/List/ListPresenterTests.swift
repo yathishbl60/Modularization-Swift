@@ -16,7 +16,6 @@ final class ListPresenterTests: XCTestCase {
     private var view: MockView!
     private var interactor: MockInteractor!
     
-    
     override func setUp() {
         super.setUp()
         
@@ -40,45 +39,153 @@ final class ListPresenterTests: XCTestCase {
     }
 
     func testViewIsReady() {
-
+        // when
+        presenter.viewDidLoad()
+        
+        // then
+        XCTAssertEqual(view.title, "Photos")
+        XCTAssertTrue(view.isLoading!)
+        XCTAssertTrue(interactor.loadPhotosCalled)
     }
 
     func testDidSelectItem() {
-
+        // given
+        presenter.didLoad(photos: mockPhotos)
+        let indexPath = IndexPath(row: 0, section: 0)
+        
+        // when
+        presenter.didSelect(indexPath: indexPath)
+        
+        // then
+        let photo = router.photo
+        XCTAssertEqual(photo, mockPhotos.first)
     }
 
     func testDidPullToRefresh() {
-
+        // when
+        presenter.didPullRefresh()
+        
+        // then
+        XCTAssertTrue(view.isLoading!)
+        XCTAssertTrue(interactor.loadPhotosCalled)
     }
 
-    func testDidScrollToBottomWhenAlreadyLoading() {
+    func testDidScrollToBottomWhenAllLoaded() {
+        presenter.didLoad(photos: [])
+        view.isLoading = nil
 
+        // when
+        presenter.didScrollToBottom()
+        
+        // then
+        XCTAssertNil(view.isLoading)
+        XCTAssertFalse(interactor.loadMorePhotosCalled)
     }
 
-    func testDidScrollToBottomWhenNotLoading() {
+    func testDidScrollToBottomWhenAlreadingLoading() {
+        // when
+        presenter.didScrollToBottom()
 
-    }
-
-    func testDidScrollToBottomWhenAllItemsLoaded() {
-
+        // then
+        XCTAssertTrue(view.isLoading!)
+        XCTAssertTrue(interactor.loadMorePhotosCalled)
     }
 
     func testDidLoadPhotos() {
-
+        // given
+        let photos = mockPhotos
+        
+        // when
+        presenter.didLoad(photos: photos)
+        
+        // then
+        XCTAssertTrue(view.endPullRefreshingCalled)
+        XCTAssertTrue(view.displayCellsCalled)
+        XCTAssertEqual(
+            view.cells as! [ListCellModel],
+            [
+                ListCellModel(title: "a", thumb: URL(string: "https://gggt.com/1")!),
+                ListCellModel(title: "b", thumb: URL(string: "https://gggt.com/2")!)
+            ]
+        )
+        XCTAssertTrue(view.isLoading!)
     }
 
     func testDidLoadMorePhotos() {
+        // given
+        let photos = mockPhotos
+        presenter.didLoad(photos: photos)
 
+        let photos2 = [
+            Photo(id: 3,
+                  albumId: 13,
+                  title: "c",
+                  url: URL(string:  "https://g.com/3")!,
+                  thumbnailUrl: URL(string:"https://gggt.com/3")!
+            ),
+            Photo(id: 4,
+                  albumId: 44,
+                  title: "d",
+                  url: URL(string:"https://g.com/4")!,
+                  thumbnailUrl: URL(string:"https://gggt.com/4")!
+            )
+        ]
+
+        // when
+        presenter.didLoadMore(photos: photos2)
+
+        // then
+        XCTAssertTrue(view.endPullRefreshingCalled)
+        XCTAssertTrue(view.displayCellsCalled)
+        XCTAssertEqual(
+            view.cells as! [ListCellModel],
+            [
+                ListCellModel(title: "a", thumb: URL(string: "https://gggt.com/1")!),
+                ListCellModel(title: "b", thumb: URL(string: "https://gggt.com/2")!),
+                ListCellModel(title: "c", thumb: URL(string: "https://gggt.com/3")!),
+                ListCellModel(title: "d", thumb: URL(string: "https://gggt.com/4")!)
+            ]
+        )
+        XCTAssertTrue(view.isLoading!)
     }
 
     func testDidFailToLoadPhotos() {
-
+        // given
+        let error = MockError.sampleError
+        
+        // when
+        presenter.didFailToLoadPhotos(error: error)
+        
+        // then
+        XCTAssertTrue((view.isLoading ?? false) == false)
+        XCTAssertTrue(view.endPullRefreshingCalled)
+        XCTAssertEqual(view.errorMessage, "Something went wrong!!")
     }
     
 }
 
-
 private extension ListPresenterTests {
+    
+    var mockPhotos: [Photo] {
+        return [
+            Photo(id: 1,
+                  albumId: 12,
+                  title: "a",
+                  url: URL(string:  "https://g.com/1")!,
+                  thumbnailUrl: URL(string:"https://gggt.com/1")!
+            ),
+            Photo(id: 2,
+                  albumId: 22,
+                  title: "b",
+                  url: URL(string:"https://g.com/2")!,
+                  thumbnailUrl: URL(string:"https://gggt.com/2")!
+            )
+        ]
+    }
+    
+    enum MockError: Error {
+        case sampleError
+    }
     
     final class MockView: ListViewInput {
 
@@ -92,7 +199,7 @@ private extension ListPresenterTests {
 
         var displayMoreCellsCalled = false
         func displayMore(cells: [CellModel]) {
-            self.cells = cells
+            self.cells.append(contentsOf: cells)
             displayMoreCellsCalled = true
         }
 

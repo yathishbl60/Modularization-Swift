@@ -9,7 +9,7 @@
 import Foundation
 import NetworkClient
 
-protocol PhotosListService {
+protocol PhotosListService : class {
     func fetchPhotos(request: PhotosListRequestParams, completion: @escaping (Result<[Photo]>) -> Void)
 }
 
@@ -32,7 +32,8 @@ final class PhotosServiceIml: PhotosListService {
     func fetchPhotos(request: PhotosListRequestParams, completion: @escaping (Result<[Photo]>) -> Void) {
         let urlBuilder = URLBuilder(
             path: URL(string: "https://jsonplaceholder.typicode.com/photos")!,
-            urlParams: ["_limit": String(request.limit), "_page": String(request.page)]
+            urlParams: [(key: "_limit", value: String(request.limit)),
+                        (key: "_page", value: String(request.page))]
         )
         let endpoint = PhotosEndpoint(url: urlBuilder.build())
         client.request(endpoint: endpoint,
@@ -43,7 +44,8 @@ final class PhotosServiceIml: PhotosListService {
 
 }
 
-struct PhotosEndpoint: Endpoint {
+struct PhotosEndpoint: Endpoint, Equatable {
+
     let url: URL
     let method: RestMethod = .get
 }

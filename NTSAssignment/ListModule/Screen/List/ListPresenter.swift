@@ -36,6 +36,8 @@ extension ListPresenter: ListViewOutput {
     }
     
     func didScrollToBottom() {
+        guard !loadedAllPhotos else { return }
+
         view?.display(isLoading: !loadedAllPhotos)
         interactor?.loadMorePhotos()
     }

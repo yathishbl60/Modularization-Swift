@@ -12,13 +12,13 @@ import XCTest
 final class ListBuilderTests: XCTestCase {
 
     func testBuild() {
-        //given
+        // given
         let listBuilder = ListBuilder()
         
-        //when
+        // when
         let viewController = listBuilder.build()
         
-        //then
+        // then
         XCTAssertTrue(viewController is ListViewController)
         let listViewController = viewController as! ListViewController
         XCTAssertTrue(listViewController.output is ListPresenter)

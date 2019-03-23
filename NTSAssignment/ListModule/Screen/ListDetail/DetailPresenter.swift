@@ -10,8 +10,8 @@ import Foundation
 
 final class DetailPresenter {
     weak var view: DetailViewInput?
-    var interactor: DetailViewInteractorInput?
-    var router: DetailRouterInput?
+//    var interactor: DetailViewInteractorInput?
+//    var router: DetailRouterInput?
 
     let photo: Photo
 

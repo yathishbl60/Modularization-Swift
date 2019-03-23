@@ -13,7 +13,7 @@ public struct ListBuilder {
 
     public init() { }
 
-    public func build() -> ListViewModule {
+    public func build() -> ListModule {
         let viewController: ListViewController = UIStoryboard(storyboard: .Main).instantiateViewController()
 
         let presenter = ListPresenter()
